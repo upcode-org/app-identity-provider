@@ -1,0 +1,1 @@
+{"version":3,"file":"attachContainer.js","sourceRoot":"","sources":["../../src/middleware/attachContainer.ts"],"names":[],"mappings":";;AACA,wDAA+C;AAGlC,QAAA,eAAe,GAAG,CAAC,GAAY,EAAE,GAAa,EAAE,IAAkB,EAAE,EAAE;IAE/E,GAAG,CAAC,WAAW,CAAC,GAAG,2BAAS,CAAC,WAAW,EAAE,CAAC;IAC3C,MAAM,CAAC,IAAI,EAAE,CAAC;AAClB,CAAC,CAAA"}

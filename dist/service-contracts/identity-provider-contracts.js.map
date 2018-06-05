@@ -1,0 +1,1 @@
+{"version":3,"file":"identity-provider-contracts.js","sourceRoot":"","sources":["../../src/service-contracts/identity-provider-contracts.ts"],"names":[],"mappings":";;AAAA;IAAA;QACI,kBAAa,GAAW,KAAK,CAAC;QAC9B,UAAK,GAAW,IAAI,CAAC;IACzB,CAAC;CAAA;AAHD,8CAGC;AAED;IACI,YAAoB,QAAQ,EAAU,QAAQ;QAA1B,aAAQ,GAAR,QAAQ,CAAA;QAAU,aAAQ,GAAR,QAAQ,CAAA;IAAE,CAAC;CACpD;AAFD,4CAEC"}
