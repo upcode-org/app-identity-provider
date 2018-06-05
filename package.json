@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "npm run server",
-    "server": "nodemon dist/server.js",
+    "server": "nodemon dist/server/server.js",
     "compile": "tsc -w"
   },
   "repository": {
