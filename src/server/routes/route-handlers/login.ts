@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { AwilixContainer } from 'awilix';
-import { IdentityProvider } from '../../services/identity-provider'; 
-import { LoginUserResponse, LoginUserRequest } from '../../services/service-contracts/identity-provider-contracts';
+import { IdentityProvider } from '../../../services/identity-provider'; 
+import { LoginUserResponse, LoginUserRequest } from '../../../services/service-contracts/identity-provider-contracts';
 
 type RequestWithContainer = Request & {container: AwilixContainer};
 

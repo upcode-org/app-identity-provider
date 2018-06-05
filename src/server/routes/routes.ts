@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { login } from '../route-handlers/login';
-import { signup } from '../route-handlers/signup';
+import { login } from './route-handlers/login';
+import { signup } from './route-handlers/signup';
 
 export const router = Router();
 
