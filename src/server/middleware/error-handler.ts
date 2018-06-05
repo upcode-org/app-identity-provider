@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { AwilixContainer } from 'awilix';
-import { MonitoringService } from '../services/monitoring-service';
+import { MonitoringService } from '../../services/monitoring-service';
 
 type RequestWithContainer = Request & { container: AwilixContainer };
 

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { container } from '../compositionRoot';
+import { container } from '../../composition-root';
 import { AwilixContainer } from 'awilix';
 
 export const attachContainer = (req: Request, res: Response, next: NextFunction) => {

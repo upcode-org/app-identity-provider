@@ -1,4 +1,4 @@
-import { LoginUserResponse, LoginUserRequest } from "../service-contracts/identity-provider-contracts";
+import { LoginUserResponse, LoginUserRequest } from "../services/service-contracts/identity-provider-contracts";
 
 export class IdentityProvider {
 

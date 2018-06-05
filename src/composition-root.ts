@@ -19,7 +19,6 @@
 import * as awilix from 'awilix';
 export const container = awilix.createContainer();
 
-export const environment = 'dev'; //change3
 //*******************************************************************/
 //Database dependecy - "Learn all you can from the mistakes of others. You won't have time to make them all yourself." ~Alfred Sheinwold
 import { MongoDriver } from './data/database';

@@ -1,6 +1,6 @@
 export class LoginUserResponse {
     authenticated: boolean= false;
-    token: string = null;
+    token: string= null;
 }
 
 export class LoginUserRequest {

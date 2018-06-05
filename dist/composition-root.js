@@ -17,7 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //                                      |___/  |_|                                              
 const awilix = require("awilix");
 exports.container = awilix.createContainer();
-exports.environment = 'dev'; //change3
 //*******************************************************************/
 //Database dependecy - "Learn all you can from the mistakes of others. You won't have time to make them all yourself." ~Alfred Sheinwold
 const database_1 = require("./data/database");
@@ -42,4 +41,4 @@ exports.container.resolve('MongoDriver');
 exports.container.resolve('IdentityProvider');
 exports.container.resolve('ArchivingService');
 exports.container.resolve('MonitoringService');
-//# sourceMappingURL=compositionRoot.js.map
+//# sourceMappingURL=composition-root.js.map
