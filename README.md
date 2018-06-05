@@ -18,7 +18,7 @@ You will need: node.js, nodemon & typescript installed in your machine.
 
 2. You will then have to compile the typescript code in the "src" folder. Do this by typing "npm run compile". The compiled javascript will be place in the "dist" folder and the typescript compiler will watch for changes.
 
-3. Finally you can type "npm run server" in a separate terminal tab. Everytime the source code changes it will be compiled, placed in the dist folder, and nodemon will restart your server.
+3. Finally you can type "npm run server" in a separate terminal tab. This will start a web server in localhost:3088. Everytime the source code changes it will be compiled, placed in the dist folder, and nodemon will restart your server.
 
 
 
