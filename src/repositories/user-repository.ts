@@ -1,21 +1,15 @@
-// import { Database } from "src/data/database";
+import { MongoDriver } from "src/data/database";
+import { Collection } from "mongodb";
 
-// export class UsersRepository {
+export class UserRepository {
     
-//     private db:Database;
-//     private collections: Array<any>
+    public userCollection: Collection;
 
-//     constructor(opts){
-//         this.db = opts.db
-//         console.log('new instance of userRepository')
-//     }
+    constructor(opts){
+        this.userCollection = opts.mongoDriver.identityProviderDb.collection('generic-users');
+    }
 
-//     public getUser(id) {
-//         return new Promise((resolve,reject) => {
-//             const userCollection = this.db.conn.collection('users');
-//             userCollection.findOne({ id:id })
-//                 .then((res) => resolve(res))
-//                 .catch(err => reject(err));
-//         });
-//     }
-// }
+    public getUserByUsername(username: string): Promise<any> {
+        return this.userCollection.findOne({ "username": username });
+    }
+}

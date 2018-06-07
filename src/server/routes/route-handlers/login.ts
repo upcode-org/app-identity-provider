@@ -5,24 +5,21 @@ import { LoginUserResponse, LoginUserRequest } from '../../../services/service-c
 
 type RequestWithContainer = Request & {container: AwilixContainer};
 
-//========== ROUTE HANDLER ==============
-
-export const login = (req: RequestWithContainer, res: Response): Response => {
-    
-    console.log('==== POST/login ====');
-    console.log( "req body", req.body);
+export const login =  (req: RequestWithContainer, res: Response): Promise<Response> => {
     
     const username = req.body.username;
     const password = req.body.password;
-
-    const loginRequest = new LoginUserRequest(username, password);
+    const loginUserRequest = new LoginUserRequest(username, password);
+    
     const identityProvider: IdentityProvider = req.container.resolve('IdentityProvider');
+    
+    return identityProvider.loginUser(loginUserRequest)
+        .then( loginUserResponse => {
+            const status = loginUserResponse.authenticated ? 200 : 401;
+            return res.status(status).json(loginUserResponse);
+        })
+        .catch( err => {
+            return res.status(500).json(err && err.stack ? err.stack : 'Internal Server Error');
+        })
 
-    const response: LoginUserResponse = identityProvider.loginUser(loginRequest);
-
-    const status = response.authenticated ? 200 : 401;
-
-    return res.status(status).json(response);
 }
-
-//========== ROUTE HANDLER ==============

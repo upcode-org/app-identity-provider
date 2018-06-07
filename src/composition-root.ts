@@ -17,15 +17,18 @@
 //                                      |___/  |_|                                              
 
 import * as awilix from 'awilix';
+import * as jwt from 'jsonwebtoken';
+
 export const container = awilix.createContainer();
 
 //*******************************************************************/
-//Database dependecy - "Learn all you can from the mistakes of others. You won't have time to make them all yourself." ~Alfred Sheinwold
+//Data dependecies - "Learn all you can from the mistakes of others. You won't have time to make them all yourself." ~Alfred Sheinwold
 import { MongoDriver } from './data/database';
+import { UserRepository } from './repositories/user-repository';
 //*******************************************************************/
 
 //*******************************************************************/
-//Monitoring dependecy - "Learn all you can from the mistakes of others. You won't have time to make them all yourself." ~Alfred Sheinwold
+//Monitoring dependecy - "To the stars and beyond, for there we may find peace at last."
 import { MonitoringService } from './services/monitoring-service';
 //*******************************************************************/
 
@@ -37,14 +40,13 @@ import { ArchivingService } from './services/archiving-service';
 
 container.register({
     //Register singletons:
-    MongoDriver: awilix.asClass(MongoDriver).singleton(),
+    mongoDriver: awilix.asClass(MongoDriver).singleton(),
+    userRepository: awilix.asClass(UserRepository).singleton(),
     IdentityProvider: awilix.asClass(IdentityProvider).singleton(),
     ArchivingService: awilix.asClass(ArchivingService).singleton(),
     MonitoringService: awilix.asClass(MonitoringService).singleton()
+
 });
 
-container.resolve('MongoDriver');
-container.resolve('IdentityProvider');
-container.resolve('ArchivingService');
-container.resolve('MonitoringService');
+container.resolve('mongoDriver');
  

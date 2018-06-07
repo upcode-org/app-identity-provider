@@ -4,5 +4,5 @@ export class LoginUserResponse {
 }
 
 export class LoginUserRequest {
-    constructor(private username, private password){}
+    constructor(public username, public password){}
 }
