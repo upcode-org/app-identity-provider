@@ -1,12 +1,4 @@
- 
-//   _______  _______   _______  __   __  _______  ___      _______ 
-//  |       ||       | |       ||  | |  ||       ||   |    |       |
-//  |    ___||   _   | |       ||  |_|  ||       ||   |    |    ___|
-//  |   | __ |  | |  | |       ||       ||       ||   |    |   |___ 
-//  |   ||  ||  |_|  | |      _||_     _||      _||   |___ |    ___|
-//  |   |_| ||       | |     |_   |   |  |     |_ |       ||   |___ 
-//  |_______||_______| |_______|  |___|  |_______||_______||_______|
-                                                          
+                                                         
 //  _      _               _    _  _                                       _      _             
 // (_)    | |             | |  (_)| |                                     (_)    | |            
 //  _   __| |  ___  _ __  | |_  _ | |_  _   _   _ __   _ __   ___  __   __ _   __| |  ___  _ __ 
@@ -16,37 +8,39 @@
 //                                       __/ | | |                                              
 //                                      |___/  |_|                                              
 
-import * as awilix from 'awilix';
-import * as jwt from 'jsonwebtoken';
 
-export const container = awilix.createContainer();
+import { AppContainer } from '../lib/container';
+export const container = new AppContainer();
 
 //*******************************************************************/
-//Data dependecies - "Learn all you can from the mistakes of others. You won't have time to make them all yourself." ~Alfred Sheinwold
-import { MongoDriver } from './data/database';
+//Data dependecies 
+import { mongoConnection } from './data/database';
 import { UserRepository } from './repositories/user-repository';
 //*******************************************************************/
 
 //*******************************************************************/
-//Monitoring dependecy - "To the stars and beyond, for there we may find peace at last."
+//Monitoring dependecy 
 import { MonitoringService } from './services/monitoring-service';
 //*******************************************************************/
 
 //*******************************************************************/
-//Application Dependencies - "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart." ~Hellen Keller
+//Application Dependencies 
 import { IdentityProvider } from './services/identity-provider';
 import { ArchivingService } from './services/archiving-service';
 //*******************************************************************/
 
-container.register({
-    //Register singletons:
-    mongoDriver: awilix.asClass(MongoDriver).singleton(),
-    userRepository: awilix.asClass(UserRepository).singleton(),
-    IdentityProvider: awilix.asClass(IdentityProvider).singleton(),
-    ArchivingService: awilix.asClass(ArchivingService).singleton(),
-    MonitoringService: awilix.asClass(MonitoringService).singleton()
 
-});
+export const containerResolver = async (): Promise<AppContainer> => {
+    try {
+        const identityProviderDb = await mongoConnection();
+        container.singleton('identityProviderDb', identityProviderDb );
+        container.singleton('userRepository', UserRepository, ['identityProviderDb'] );
+        container.singleton('identityProvider', IdentityProvider, ['userRepository'] );
+        container.singleton('monitoringService', MonitoringService);
+        container.singleton('archivingService', ArchivingService);
+        return container;
 
-container.resolve('mongoDriver');
- 
+    } catch(err) {
+        throw err
+    }
+}

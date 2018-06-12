@@ -1,12 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
 import { AwilixContainer } from 'awilix';
 import { MonitoringService } from '../../services/monitoring-service';
+import { AppContainer } from 'lib/container';
 
-type RequestWithContainer = Request & { container: AwilixContainer };
+type RequestWithContainer = Request & { container: AppContainer };
 
 export const errorHandler = (err: Error, req: RequestWithContainer, res: Response, next: NextFunction) => {
 
-    const monitoringService: MonitoringService = req.container.resolve('MonitoringService');
+    const monitoringService: MonitoringService = req.container.get('monitoringService');
     
     monitoringService.report(err);
     

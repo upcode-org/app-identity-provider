@@ -1,12 +1,27 @@
 import { Request, Response } from 'express';
-import { AwilixContainer } from 'awilix';
+import { AppContainer } from '../../../../lib/container';
+import { IdentityProvider } from '../../../services/identity-provider';
+import { SignupUserRequest, SignupUserResponse } from '../../../services/service-contracts/identity-provider-contracts';
 
-type RequestWithContainer = Request & {container: AwilixContainer};
+type RequestWithContainer = Request & {container: AppContainer};
 
-export const signup = (req: RequestWithContainer, res: Response) => {
+export const signup = (req: RequestWithContainer, res: Response): Promise<Response> => {
     
-    res.status(200).json({
-        message: 'signed up!'
-    });
+    let signupUserRequest = new SignupUserRequest();
+
+    signupUserRequest.email = req.body.email;
+    signupUserRequest.firstName = req.body.firstName;
+    signupUserRequest.lastName = req.body.lastName;
+    signupUserRequest.password = req.body.password
+
+    const identityProvider: IdentityProvider = req.container.get('identityProvider');
     
+    return identityProvider.signupUser(signupUserRequest)
+        .then((signupUserResponse: SignupUserResponse) => {
+            const status = signupUserResponse.authenticated ? 200 : 401;
+            return res.status(status).json(signupUserResponse);
+        })
+        .catch( err => {
+            return res.status(500).json(err && err.stack ? err.stack : 'Internal Server Error');
+        });
 }

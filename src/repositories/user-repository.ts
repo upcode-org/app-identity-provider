@@ -1,15 +1,29 @@
-import { MongoDriver } from "src/data/database";
-import { Collection } from "mongodb";
+import { Collection, Db, InsertOneWriteOpResult } from 'mongodb';
+import { SignupUserRequest } from '../services/service-contracts/identity-provider-contracts';
+
+
+// I NEED TO CATCH/HANDLE ERRS HERE, instead of handling in the IdentityProvider
 
 export class UserRepository {
     
     public userCollection: Collection;
 
-    constructor(opts){
-        this.userCollection = opts.mongoDriver.identityProviderDb.collection('generic-users');
+    constructor(identityProviderDb: Db){
+        this.userCollection = identityProviderDb.collection('generic-users');
     }
 
-    public getUserByUsername(username: string): Promise<any> {
-        return this.userCollection.findOne({ "username": username });
+    getUserByEmail(email: string): Promise<any> {
+        return this.userCollection.findOne({ "email": email })
+            .then( doc => doc)
+            .catch( err => { throw err });
+    }
+
+    createUser(newUser): Promise<any> {
+        return this.userCollection.insertOne(newUser)
+            .then( (result: InsertOneWriteOpResult) => {
+                const insertedDocument = result.ops[0];
+                return insertedDocument
+            })
+            .catch( err => { throw err });
     }
 }
