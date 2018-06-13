@@ -25,7 +25,7 @@ describe('Identity Provider Test:', () => {
 
     });
 
-    it('should fail signing up a user, due to missing name', async () => {
+    it('should fail signing up a user, due to missing first name', async () => {
         let identityProvider: IdentityProvider = container.get('identityProvider');
         let signupUserRequest = new SignupUserRequest();
         let result;
