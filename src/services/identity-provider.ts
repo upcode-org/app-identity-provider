@@ -64,6 +64,7 @@ export class IdentityProvider implements IIdentityProvider {
         
         return this.userRepository.createUser(newUser)
             .then((createdUser) => {
+                if(!createdUser) throw new Error('could not create user');
                 const token = sign({ username: createdUser.username, extra: 'some extra claims'}, cert, {algorithm: 'RS256'});
                 signupUserResponse.authenticated = true;
                 signupUserResponse.token = token;
