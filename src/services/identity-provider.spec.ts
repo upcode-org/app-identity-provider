@@ -108,7 +108,7 @@ describe('Identity Provider Test:', () => {
             result = err;
         }
 
-        expect(result.validationError).to.equal('User is already registered');
+        expect(result.code).to.equal(1);
     });
 
 });

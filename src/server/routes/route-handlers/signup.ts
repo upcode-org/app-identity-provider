@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { AppContainer } from '../../../../lib/container';
 import { IdentityProvider } from '../../../services/identity-provider';
 import { SignupUserRequest, SignupUserResponse } from '../../../services/service-contracts/identity-provider-contracts';
+import { MongoError } from 'mongodb';
 
 type RequestWithContainer = Request & {container: AppContainer};
 
@@ -22,6 +23,7 @@ export const signup = (req: RequestWithContainer, res: Response): Promise<Respon
             return res.status(status).json(signupUserResponse);
         })
         .catch( err => {
-            return res.status(500).json(err && err.stack ? err.stack : 'Internal Server Error');
+            const status = err.code === 1 ? 422 : 500;
+            return res.status(status).json(err && err.stack ? err.stack : 'Internal Server Error');
         });
 }

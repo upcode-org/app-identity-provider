@@ -14,8 +14,7 @@ export class UserRepository {
 
     getUserByEmail(email: string): Promise<any> {
         return this.userCollection.findOne({ "email": email })
-            .then( doc => doc)
-            .catch( err => { throw err });
+            .then( doc => doc);
     }
 
     createUser(newUser): Promise<any> {
@@ -24,6 +23,14 @@ export class UserRepository {
                 const insertedDocument = result.ops[0];
                 return insertedDocument
             })
-            .catch( err => { throw err });
+            .catch( err => {
+                if(err.code === 11000) {
+                    let customError = new Error('User with this email is already registered');
+                    customError['code'] = 1;
+                    throw customError;
+                }
+                console.log(err);
+                throw err;
+            });
     }
 }

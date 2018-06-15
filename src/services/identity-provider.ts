@@ -38,23 +38,8 @@ export class IdentityProvider implements IIdentityProvider {
 
     async signupUser(signupUserRequest: SignupUserRequest): Promise<SignupUserResponse> {
         let signupUserResponse = new SignupUserResponse();
-        let hash;
-
-        try {
-            if( await this.isUserRegistered(signupUserRequest.email) ) {
-                signupUserResponse.validationError = 'User is already registered';
-                return signupUserResponse;
-            }
-        }catch(err) {
-            throw err;
-        }
-
-        try {
-            hash = await this.hashPassword(signupUserRequest.password);
-        }catch(err) {
-            throw err;
-        }
-
+        const hash = await this.hashPassword(signupUserRequest.password);
+        
         const newUser = {
             "email": signupUserRequest.email,
             "password": hash,
@@ -64,7 +49,6 @@ export class IdentityProvider implements IIdentityProvider {
         
         return this.userRepository.createUser(newUser)
             .then((createdUser) => {
-                if(!createdUser) throw new Error('could not create user');
                 const token = sign({ username: createdUser.username, extra: 'some extra claims'}, cert, {algorithm: 'RS256'});
                 signupUserResponse.authenticated = true;
                 signupUserResponse.token = token;
@@ -72,24 +56,14 @@ export class IdentityProvider implements IIdentityProvider {
             });
     }
 
-    private isUserRegistered(email): Promise<boolean> {
-        return this.userRepository.getUserByEmail(email)
-            .then( doc => {
-                if(!doc) return false
-                return true
-            })
-    }
-
     private hashPassword(password): Promise<string> {
         return bcrypt.hash(password, 10)
-            .then( hash => hash )
-            .catch( err => {throw err});
+            .then( hash => hash );
     }
 
     private doesPasswordMatch(password, hash): Promise<boolean> { 
         return bcrypt.compare(password, hash)
-            .then( verdict => verdict )
-            .catch( err => {throw err});
+            .then( verdict => verdict );
     }
 
 }
