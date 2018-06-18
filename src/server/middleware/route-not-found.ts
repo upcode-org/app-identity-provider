@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { AwilixContainer } from 'awilix';
+import { AppContainer } from '../../../lib/container';
 
-type RequestWithContainer = Request & {container: AwilixContainer};
+type RequestWithContainer = Request & {container: AppContainer};
 
 export const routeNotFoundHandler = (req: RequestWithContainer, res: Response, next: NextFunction) => {
     

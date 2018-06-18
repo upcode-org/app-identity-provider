@@ -1,5 +1,5 @@
 import { Collection, Db, InsertOneWriteOpResult } from 'mongodb';
-import { SignupUserRequest } from '../services/service-contracts/identity-provider-contracts';
+import { AlreadyRegisteredError, FieldValidationError } from './error-definitions';
 
 
 // I NEED TO CATCH/HANDLE ERRS HERE, instead of handling in the IdentityProvider
@@ -24,12 +24,8 @@ export class UserRepository {
                 return insertedDocument
             })
             .catch( err => {
-                if(err.code === 11000) {
-                    let customError = new Error('User with this email is already registered');
-                    customError['code'] = 1;
-                    throw customError;
-                }
-                console.log(err);
+                if(err.code === 11000) throw new AlreadyRegisteredError('User with this email is already registered');
+                if(err.code === 121) throw new FieldValidationError('Document failed validation');
                 throw err;
             });
     }

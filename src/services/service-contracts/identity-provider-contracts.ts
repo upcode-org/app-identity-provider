@@ -24,7 +24,6 @@ export class SignupUserRequest {
 }
 
 export class SignupUserResponse {
-    validationError: string = null;
     authenticated: boolean= false;
     token: string= null;
 }

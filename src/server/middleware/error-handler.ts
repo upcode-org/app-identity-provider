@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express';
-import { AwilixContainer } from 'awilix';
 import { MonitoringService } from '../../services/monitoring-service';
 import { AppContainer } from 'lib/container';
 

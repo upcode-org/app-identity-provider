@@ -35,9 +35,9 @@ export const containerResolver = async (): Promise<AppContainer> => {
         const identityProviderDb = await mongoConnection();
         container.singleton('identityProviderDb', identityProviderDb );
         container.singleton('userRepository', UserRepository, ['identityProviderDb'] );
-        container.singleton('identityProvider', IdentityProvider, ['userRepository'] );
+        container.singleton('identityProvider', IdentityProvider, ['userRepository', 'archivingService'] );
         container.singleton('monitoringService', MonitoringService);
-        container.singleton('archivingService', ArchivingService);
+        container.singleton('archivingService', ArchivingService , ['identityProviderDb']);
         return container;
 
     } catch(err) {

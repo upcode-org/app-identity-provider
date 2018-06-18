@@ -16,9 +16,8 @@ export class AppContainer {
         this._services.set(name, {definition: definition, dependencies: dependencies, singleton:true})
     }
 
-    get(name) { // name = user
+    get(name) { 
         const c = this._services.get(name)
-        //c is a service
         if(this._isClass(c.definition)) {
 
             if(c.singleton) {
