@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import { sign } from 'jsonwebtoken';
 import * as bcrypt from 'bcrypt';
+import {createTransport} from 'nodemailer';
 
 import { UserRepository } from '../repositories/user-repository';
 import {
@@ -11,8 +12,10 @@ import {
     SignupUserResponse,
 } from '../services/service-contracts/identity-provider-contracts';
 import { ArchivingService } from './archiving-service';
+import * as fs from 'fs';
 
-var cert = readFileSync('.config/private_key_06-10-18.key');
+const cert = readFileSync('.config/private_key_06-10-18.key');
+const mailerCredentials = JSON.parse(fs.readFileSync('.config/credentials.json', 'utf8')).nodemailer;
 
 export class IdentityProvider implements IIdentityProvider {
 
@@ -29,7 +32,7 @@ export class IdentityProvider implements IIdentityProvider {
 
         return this.userRepository.getUserByEmail(loginUserRequest.email)
             .then( async (user) => {
-                if( user && await this.doesPasswordMatch(loginUserRequest.password, user.password) ) {
+                if( user && user.verified && await this.doesPasswordMatch(loginUserRequest.password, user.password) ) {
                     const token = sign({ email: loginUserRequest.email, extra: 'some extra claims'}, cert, {algorithm: 'RS256'});
                     loginUserResponse.authenticated = true;
                     loginUserResponse.token = token;
@@ -64,8 +67,40 @@ export class IdentityProvider implements IIdentityProvider {
                 signupUserResponse.authenticated = false;
                 signupUserResponse.token = token;
                 this.archiveEvent(createdUser.email, 'signupUser');
+                this.sendEmail(createdUser);
                 return signupUserResponse;
             });
+    }
+
+    verifyUser(userId) {
+        return this.userRepository.updateUserVerification(userId);
+    }
+
+    private sendEmail(createdUser): void {
+
+        let config: any = { 
+            host: 'smtp.office365.com',
+            port: '587',
+            auth: { user: mailerCredentials.username, pass: mailerCredentials.password },
+            secureConnection: false,
+            tls: { ciphers: 'SSLv3' }
+        }
+
+        var transporter = createTransport(config);
+          
+          var mailOptions = {
+            from: 'admin@upcode.co',
+            to: createdUser.email,
+            subject: 'Verify your upcode account',
+            html: `
+                <h1>HELLO ${createdUser.first_name}</h1>
+                <p>Click <a href="http://localhost:3088/v1.0/verify?id=${createdUser._id}">here</a> to verify your account.</p>
+            `
+          };
+          
+          transporter.sendMail(mailOptions)
+            .then(res=>console.log(res))
+            .catch(err=>console.log(err));
     }
 
     private hashPassword(password): Promise<string> {

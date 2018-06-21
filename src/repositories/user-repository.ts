@@ -1,4 +1,4 @@
-import { Collection, Db, InsertOneWriteOpResult } from 'mongodb';
+import { Collection, Db, InsertOneWriteOpResult, FindAndModifyWriteOpResultObject, ObjectId } from 'mongodb';
 import { AlreadyRegisteredError, FieldValidationError } from './error-definitions';
 
 
@@ -28,5 +28,9 @@ export class UserRepository {
                 if(err.code === 121) throw new FieldValidationError('Document failed validation');
                 throw err;
             });
+    }
+
+    updateUserVerification(userId): Promise<FindAndModifyWriteOpResultObject> {
+       return this.userCollection.findOneAndUpdate({"_id": new ObjectId(userId)}, { $set: {verified: true, active: true} });
     }
 }

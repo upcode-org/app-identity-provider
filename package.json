@@ -16,11 +16,13 @@
   "author": "Sebastian Vega",
   "license": "ISC",
   "dependencies": {
+    "@types/nodemailer": "^4.6.0",
     "bcrypt": "^2.0.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.1",
-    "mongodb": "^3.0.2"
+    "mongodb": "^3.0.2",
+    "nodemailer": "^4.6.7"
   },
   "devDependencies": {
     "@types/bcrypt": "^2.0.0",

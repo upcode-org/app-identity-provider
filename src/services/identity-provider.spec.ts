@@ -4,6 +4,7 @@ import 'mocha';
 import { containerResolver } from '../composition-root';
 import { LoginUserRequest, SignupUserRequest, SignupUserResponse } from './service-contracts/identity-provider-contracts';
 import { UserRepository } from '../repositories/user-repository';
+import { DeleteWriteOpResultObject } from 'mongodb';
 
 describe('Identity Provider Test:', () => {
 
@@ -52,7 +53,7 @@ describe('Identity Provider Test:', () => {
         } catch(err) {
             result = err;
         }
-        expect(result.code).to.equal(1); //already registered code
+        expect(result.code).to.equal(1); // already registered code
     });
 
     it('should fail signing up due to missing first name', async () => {
@@ -111,7 +112,7 @@ describe('Identity Provider Test:', () => {
         expect(result.code).to.equal(2); //failed validation code
     });
 
-    it('should login a user', async () => {
+    it('should fail login due to unverified user', async () => {
         const identityProvider: IdentityProvider = container.get('identityProvider');
         let loginUserRequest = new LoginUserRequest();
         
@@ -119,7 +120,7 @@ describe('Identity Provider Test:', () => {
         loginUserRequest.password = password;
 
         const result = await identityProvider.loginUser(loginUserRequest);
-        expect(result.authenticated).to.equal(true);
+        expect(result.authenticated).to.equal(false);
 
     });
 
@@ -127,7 +128,7 @@ describe('Identity Provider Test:', () => {
         const identityProvider: IdentityProvider = container.get('identityProvider');
         let loginUserRequest = new LoginUserRequest();
         
-        loginUserRequest.email = `test-${timestamp}@email.com`;
+        loginUserRequest.email = 'svega@upcode.co';
         loginUserRequest.password = 'wrongpassword';
 
         const result = await identityProvider.loginUser(loginUserRequest);
@@ -135,9 +136,22 @@ describe('Identity Provider Test:', () => {
 
     });
 
-    after(() => {
+    it('should login a user', async () => {
+        const identityProvider: IdentityProvider = container.get('identityProvider');
+        let loginUserRequest = new LoginUserRequest();
+        
+        loginUserRequest.email = 'svega@upcode.co';
+        loginUserRequest.password = 'testPassword';
+
+        const result = await identityProvider.loginUser(loginUserRequest);
+        expect(result.authenticated).to.equal(true);
+
+    });
+
+    after(async () => {
         const userRepository: UserRepository = container.get('userRepository');
-        userRepository.userCollection.deleteOne({ email : `test-${timestamp}@email.com` });
+        await userRepository.userCollection.deleteOne({ email : `test-${timestamp}@email.com` })
+            .then((res: DeleteWriteOpResultObject)  => console.log('deleted: ', res.deletedCount));
     });
 
 });
