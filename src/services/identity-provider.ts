@@ -1,7 +1,6 @@
 import { readFileSync } from 'fs';
 import { sign } from 'jsonwebtoken';
 import * as bcrypt from 'bcrypt';
-import {createTransport} from 'nodemailer';
 
 import { UserRepository } from '../repositories/user-repository';
 import {
@@ -12,20 +11,22 @@ import {
     SignupUserResponse,
 } from '../services/service-contracts/identity-provider-contracts';
 import { ArchivingService } from './archiving-service';
-import * as fs from 'fs';
+import { VerificationEmailProducer } from './verification-email-produer';
 
 const cert = readFileSync('.config/private_key_06-10-18.key');
-const mailerCredentials = JSON.parse(fs.readFileSync('.config/credentials.json', 'utf8')).nodemailer;
 
 export class IdentityProvider implements IIdentityProvider {
 
-    userRepository: UserRepository
-    archivingService: ArchivingService
+    userRepository: UserRepository;
+    archivingService: ArchivingService;
+    verificationEmailProducer: VerificationEmailProducer;
 
-    constructor(userRepository, archivingService){
+    constructor(userRepository, archivingService, verificationEmailProducer) {
         this.userRepository = userRepository;
         this.archivingService = archivingService;
+        this.verificationEmailProducer = verificationEmailProducer;
     }
+
     
     loginUser(loginUserRequest: LoginUserRequest): Promise<LoginUserResponse> {
         let loginUserResponse = new LoginUserResponse();
@@ -67,7 +68,7 @@ export class IdentityProvider implements IIdentityProvider {
                 signupUserResponse.authenticated = false;
                 signupUserResponse.token = token;
                 this.archiveEvent(createdUser.email, 'signupUser');
-                this.sendEmail(createdUser);
+                this.sendToEmailQueue(createdUser);
                 return signupUserResponse;
             });
     }
@@ -76,31 +77,16 @@ export class IdentityProvider implements IIdentityProvider {
         return this.userRepository.updateUserVerification(userId);
     }
 
-    private sendEmail(createdUser): void {
-
-        let config: any = { 
-            host: 'smtp.office365.com',
-            port: '587',
-            auth: { user: mailerCredentials.username, pass: mailerCredentials.password },
-            secureConnection: false,
-            tls: { ciphers: 'SSLv3' }
+    private sendToEmailQueue(createdUser): void {
+        
+        const msg = { 
+            "userId": createdUser._id, 
+            "email": createdUser.email, 
+            "firstName": createdUser.first_name,
+            "lastName": createdUser.last_name
         }
 
-        var transporter = createTransport(config);
-          
-          var mailOptions = {
-            from: 'admin@upcode.co',
-            to: createdUser.email,
-            subject: 'Verify your upcode account',
-            html: `
-                <h1>HELLO ${createdUser.first_name}</h1>
-                <p>Click <a href="http://localhost:3088/v1.0/verify?id=${createdUser._id}">here</a> to verify your account.</p>
-            `
-          };
-          
-          transporter.sendMail(mailOptions)
-            .then(res=>console.log(res))
-            .catch(err=>console.log(err));
+        this.verificationEmailProducer.produceMsg(msg)
     }
 
     private hashPassword(password): Promise<string> {

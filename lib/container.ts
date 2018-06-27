@@ -34,8 +34,12 @@ export class AppContainer {
             return this._createInstance(c)
 
         } else {
-            return c.definition
+            return c.definition //always the same object or primitive
         }
+    }
+
+    reset(){
+        this._singletons.clear();
     }
 
     _getResolvedDependencies(service) {

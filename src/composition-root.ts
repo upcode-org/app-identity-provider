@@ -19,25 +19,36 @@ import { UserRepository } from './repositories/user-repository';
 //*******************************************************************/
 
 //*******************************************************************/
-//Monitoring dependecy 
-import { MonitoringService } from './services/monitoring-service';
+//Message Broker dependecies 
+import { VerificationEmailProducer } from './services/verification-email-produer';
 //*******************************************************************/
 
 //*******************************************************************/
-//Application Dependencies 
-import { IdentityProvider } from './services/identity-provider';
+//Monitoring dependecies
+import { MonitoringService } from './services/monitoring-service';
 import { ArchivingService } from './services/archiving-service';
+//*******************************************************************/
+
+//*******************************************************************/
+//Application
+import { IdentityProvider } from './services/identity-provider';
 //*******************************************************************/
 
 
 export const containerResolver = async (): Promise<AppContainer> => {
     try {
         const identityProviderDb = await mongoConnection();
-        container.singleton('identityProviderDb', identityProviderDb );
+        
+        container.register('identityProviderDb', identityProviderDb );
+        container.singleton('verificationEmailProducer', VerificationEmailProducer);
         container.singleton('userRepository', UserRepository, ['identityProviderDb'] );
-        container.singleton('identityProvider', IdentityProvider, ['userRepository', 'archivingService'] );
+        container.singleton('identityProvider', IdentityProvider, ['userRepository', 'archivingService', 'verificationEmailProducer'] );
         container.singleton('monitoringService', MonitoringService);
         container.singleton('archivingService', ArchivingService , ['identityProviderDb']);
+
+        const verificationEmailProducer: VerificationEmailProducer = container.get('verificationEmailProducer');
+        await verificationEmailProducer.connect();
+
         return container;
 
     } catch(err) {

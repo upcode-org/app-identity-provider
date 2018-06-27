@@ -19,8 +19,7 @@ export const signup = (req: RequestWithContainer, res: Response): Promise<Respon
     
     return identityProvider.signupUser(signupUserRequest)
         .then((signupUserResponse: SignupUserResponse) => {
-            const status = signupUserResponse.authenticated ? 200 : 401;
-            return res.status(status).json(signupUserResponse);
+            return res.status(200).json(signupUserResponse);
         })
         .catch( err => {
             const status = err.code === 1 ? 422 : 500;
