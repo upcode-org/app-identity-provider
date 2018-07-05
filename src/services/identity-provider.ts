@@ -10,23 +10,23 @@ import {
     SignupUserRequest,
     SignupUserResponse,
 } from '../services/service-contracts/identity-provider-contracts';
-import { ArchivingService } from './archiving-service';
-import { VerificationEmailProducer } from './verification-email-produer';
+//import { ArchivingService } from './archiving-service';
+import { VerificationEmailProducer } from './verification-email-producer';
+import { MonitoringService } from './monitoring-service';
 
 const cert = readFileSync('.config/private_key_06-10-18.key');
 
 export class IdentityProvider implements IIdentityProvider {
 
     userRepository: UserRepository;
-    archivingService: ArchivingService;
     verificationEmailProducer: VerificationEmailProducer;
+    monitoringService: MonitoringService;
 
-    constructor(userRepository, archivingService, verificationEmailProducer) {
+    constructor(userRepository, verificationEmailProducer, monitoringService) {
         this.userRepository = userRepository;
-        this.archivingService = archivingService;
         this.verificationEmailProducer = verificationEmailProducer;
+        this.monitoringService = monitoringService;
     }
-
     
     loginUser(loginUserRequest: LoginUserRequest): Promise<LoginUserResponse> {
         let loginUserResponse = new LoginUserResponse();
@@ -37,7 +37,6 @@ export class IdentityProvider implements IIdentityProvider {
                     const token = sign({ email: loginUserRequest.email, extra: 'some extra claims'}, cert, {algorithm: 'RS256'});
                     loginUserResponse.authenticated = true;
                     loginUserResponse.token = token;
-                    this.archiveEvent(user.email, 'loginUser');
                     return loginUserResponse;
                 }
                 // credentials not authenticated
@@ -46,7 +45,7 @@ export class IdentityProvider implements IIdentityProvider {
     }
 
     async signupUser(signupUserRequest: SignupUserRequest): Promise<SignupUserResponse> {
-        let signupUserResponse = new SignupUserResponse();
+        
         const hash = await this.hashPassword(signupUserRequest.password);
         const now = new Date();
         
@@ -58,17 +57,21 @@ export class IdentityProvider implements IIdentityProvider {
             "verified" : false,
             "active": false,
             "sign_up_date": now,
-            "sign_up_date_tzo": now.getTimezoneOffset() 
+            "sign_up_date_tzo": now.getTimezoneOffset(),
+            "roles": {}
         }
+        
+        this.monitoringService.log(`IdentityProvider service will create new user: ${JSON.stringify(newUser)}`);
+        let signupUserResponse = new SignupUserResponse();
         
         return this.userRepository.createUser(newUser)
             .then((createdUser) => {
-                const token = sign({ username: createdUser.email, extra: 'some extra claims'}, cert, {algorithm: 'RS256'});
-                //user should not be authenticated upon signup, they need to verify first
-                signupUserResponse.authenticated = false;
-                signupUserResponse.token = token;
-                this.archiveEvent(createdUser.email, 'signupUser');
+                this.monitoringService.log(`IdentityProvider created new user: ${JSON.stringify(createdUser)}`)
+
                 this.sendToEmailQueue(createdUser);
+                
+                const token = sign({ username: createdUser.email, extra: 'some extra claims'}, cert, {algorithm: 'RS256'});
+                signupUserResponse.token = token;
                 return signupUserResponse;
             });
     }
@@ -97,11 +100,6 @@ export class IdentityProvider implements IIdentityProvider {
     private doesPasswordMatch(password, hash): Promise<boolean> { 
         return bcrypt.compare(password, hash)
             .then( verdict => verdict );
-    }
-
-    private archiveEvent(eventPayload: string, eventName: string): void {
-        let event = { eventPayload, eventName };
-        this.archivingService.archiveEvent(event);
     }
 
 }

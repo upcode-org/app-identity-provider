@@ -1,14 +1,11 @@
 import { Collection, Db, InsertOneWriteOpResult, FindAndModifyWriteOpResultObject, ObjectId } from 'mongodb';
 import { AlreadyRegisteredError, FieldValidationError } from './error-definitions';
 
-
-// I NEED TO CATCH/HANDLE ERRS HERE, instead of handling in the IdentityProvider
-
 export class UserRepository {
     
     public userCollection: Collection;
 
-    constructor(identityProviderDb: Db){
+    constructor(identityProviderDb: Db) {
         this.userCollection = identityProviderDb.collection('generic-users');
     }
 
@@ -21,7 +18,7 @@ export class UserRepository {
         return this.userCollection.insertOne(newUser)
             .then( (result: InsertOneWriteOpResult) => {
                 const insertedDocument = result.ops[0];
-                return insertedDocument
+                return insertedDocument;
             })
             .catch( err => {
                 if(err.code === 11000) throw new AlreadyRegisteredError('User with this email is already registered');

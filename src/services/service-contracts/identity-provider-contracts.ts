@@ -1,7 +1,6 @@
 import { UserRepository } from "../../repositories/user-repository";
 
 export interface IIdentityProvider {
-    userRepository: UserRepository
     loginUser(loginUserRequest: LoginUserRequest): Promise<LoginUserResponse>;
     signupUser(signupUserRequest: SignupUserRequest): Promise<SignupUserResponse>;
 }

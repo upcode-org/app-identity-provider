@@ -2,10 +2,12 @@ export class AppContainer {
     
     _services;
     _singletons;
+    _scopedSingletons;
     
-    constructor(){
-        this._services = new Map();
-        this._singletons = new Map();
+    constructor(services?, singletons?) {
+        this._services = services ? services : new Map();
+        this._singletons = singletons ? singletons : new Map();
+        this._scopedSingletons = new Map();
     }
 
     register(name, definition, dependencies?) {
@@ -14,6 +16,14 @@ export class AppContainer {
 
     singleton(name, definition, dependencies?) {
         this._services.set(name, {definition: definition, dependencies: dependencies, singleton:true})
+    }
+
+    scoped(name, definition, dependencies?) {
+        this._services.set(name, {definition: definition, dependencies: dependencies, scoped:true})
+    }
+
+    value(name, definition, dependencies?) {
+        this._services.set(name, {definition: definition, dependencies: dependencies, value:true})
     }
 
     get(name) { 
@@ -31,15 +41,22 @@ export class AppContainer {
                 }
             }
 
+            if(c.scoped){
+                const scopedSingletonInstance = this._scopedSingletons.get(name)
+                if(scopedSingletonInstance) {
+                    return scopedSingletonInstance
+                } else {
+                    const newScopedSingletonInstance = this._createInstance(c)
+                    this._scopedSingletons.set(name, newScopedSingletonInstance)
+                    return newScopedSingletonInstance
+                } 
+            }
+
             return this._createInstance(c)
 
         } else {
             return c.definition //always the same object or primitive
         }
-    }
-
-    reset(){
-        this._singletons.clear();
     }
 
     _getResolvedDependencies(service) {
@@ -58,6 +75,10 @@ export class AppContainer {
 
     _isClass(definition) {
         return typeof definition === 'function'
+    }
+
+    getScopedContainer(): AppContainer {
+        return new AppContainer(this._services, this._singletons);
     }
 
 }

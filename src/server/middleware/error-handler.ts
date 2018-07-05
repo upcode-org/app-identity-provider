@@ -8,7 +8,7 @@ export const errorHandler = (err: Error, req: RequestWithContainer, res: Respons
 
     const monitoringService: MonitoringService = req.container.get('monitoringService');
     
-    monitoringService.report(err);
+    monitoringService.log(err);
     
     res.status(500).json({
         message: err.stack ? err.stack : 'Internal Server error'

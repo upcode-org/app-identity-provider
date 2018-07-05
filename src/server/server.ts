@@ -7,6 +7,7 @@ import * as bodyParser from 'body-parser';
 import { containerResolver, container } from '../composition-root';
 import * as cluster from 'cluster';
 import { cpus } from 'os';
+import { MonitoringService } from '../services/monitoring-service';
 
 if (false) { //cluster.isMaster
     // const n = cpus().length;
@@ -28,7 +29,9 @@ if (false) { //cluster.isMaster
 
 } else {
     containerResolver()
-        .then(() => {
+        .then((container) => {
+
+            const monitoringService: MonitoringService = container.get('monitoringService');
 
             const app = express();
             const port = 3088;
@@ -45,6 +48,11 @@ if (false) { //cluster.isMaster
 
             server.on('close', () => {
                 console.log('server closed!');
+            });
+
+            process.on('uncaughtException', (err) => {
+                monitoringService.log(`Uncaught exception: ${err}`);
+                process.exit(1);
             });
         })
         .catch( err => console.log('unable to start server', err ));

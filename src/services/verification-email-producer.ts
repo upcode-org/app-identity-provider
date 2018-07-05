@@ -1,5 +1,5 @@
 import { Channel, Connection } from 'amqplib';
-import { rabbitConnection, rabbitChannel } from "../data/rabbitMQ";
+import { rabbitChannel } from "../data/rabbitMQ";
 
 export class VerificationEmailProducer {
     
@@ -7,20 +7,26 @@ export class VerificationEmailProducer {
     ch: Channel;
     connection: Connection;
 
-    async connect(): Promise<void> {
-        try {
-            this.connection = await rabbitConnection();
-            this.ch = await rabbitChannel(this.connection);
-            console.log('connected to RabbitMQ');
-        } catch(err) {
-            //report
-            console.log('could not connect to RabbitMQ');
-            return null
-        }
-        this.connection.on('close', this.connect.bind(this));
+    constructor(rmqConnection) {
+        this.connection = rmqConnection;
     }
 
-    produceMsg(msg): boolean {
+    async connect(): Promise<void> {
+        try {
+            //this.connection = await rabbitConnection();
+            this.ch = await rabbitChannel(this.connection);
+            console.log('VerificationEmailProducer connected to RabbitMQ Channel');
+        } catch(err) {
+            //report
+            console.log('VerificationEmailProducer could not connect to RabbitMQ Channel');
+            return null;
+        }
+        //this.connection.on('close', this.connect.bind(this));
+    }
+
+    async produceMsg(msg): Promise<boolean> {
+        if(!this.ch) await this.connect();
+
         const msgBuffer = new Buffer(JSON.stringify(msg));
 
         try {
@@ -30,9 +36,4 @@ export class VerificationEmailProducer {
             console.log(err);
         }
     }
-
-    setNewCh(newCh: Channel): void {
-        this.ch = newCh;
-    }
-
 }

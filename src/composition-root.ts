@@ -8,7 +8,6 @@
 //                                       __/ | | |                                              
 //                                      |___/  |_|                                              
 
-
 import { AppContainer } from '../lib/container';
 export const container = new AppContainer();
 
@@ -19,35 +18,34 @@ import { UserRepository } from './repositories/user-repository';
 //*******************************************************************/
 
 //*******************************************************************/
-//Message Broker dependecies 
-import { VerificationEmailProducer } from './services/verification-email-produer';
-//*******************************************************************/
-
-//*******************************************************************/
 //Monitoring dependecies
 import { MonitoringService } from './services/monitoring-service';
-import { ArchivingService } from './services/archiving-service';
+import { logger } from './services/logger';
 //*******************************************************************/
 
 //*******************************************************************/
 //Application
 import { IdentityProvider } from './services/identity-provider';
+import { VerificationEmailProducer } from './services/verification-email-producer';
+import { rabbitConnection } from './data/rabbitMQ';
 //*******************************************************************/
 
 
 export const containerResolver = async (): Promise<AppContainer> => {
     try {
         const identityProviderDb = await mongoConnection();
+        const rmqConnection = await rabbitConnection();
         
-        container.register('identityProviderDb', identityProviderDb );
-        container.singleton('verificationEmailProducer', VerificationEmailProducer);
+        container.singleton('rmqConnection', rmqConnection);
+        container.singleton('verificationEmailProducer', VerificationEmailProducer, ['rmqConnection'] );
+        container.singleton('identityProviderDb', identityProviderDb );
         container.singleton('userRepository', UserRepository, ['identityProviderDb'] );
-        container.singleton('identityProvider', IdentityProvider, ['userRepository', 'archivingService', 'verificationEmailProducer'] );
-        container.singleton('monitoringService', MonitoringService);
-        container.singleton('archivingService', ArchivingService , ['identityProviderDb']);
-
-        const verificationEmailProducer: VerificationEmailProducer = container.get('verificationEmailProducer');
-        await verificationEmailProducer.connect();
+        container.singleton('logger', logger);
+        
+        container.scoped('processInstanceId', process.pid );
+        container.scoped('queueName', 'identity-provider-logs' );
+        container.scoped('monitoringService', MonitoringService, ['logger', 'processInstanceId', 'rmqConnection', 'queueName']);
+        container.scoped('identityProvider', IdentityProvider, ['userRepository', 'verificationEmailProducer', 'monitoringService'] );
 
         return container;
 

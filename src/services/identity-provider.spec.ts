@@ -141,7 +141,7 @@ describe('Identity Provider Test:', () => {
         let loginUserRequest = new LoginUserRequest();
         
         loginUserRequest.email = 'svega@upcode.co';
-        loginUserRequest.password = 'testPassword';
+        loginUserRequest.password = 'upcode-1985!';
 
         const result = await identityProvider.loginUser(loginUserRequest);
         expect(result.authenticated).to.equal(true);
