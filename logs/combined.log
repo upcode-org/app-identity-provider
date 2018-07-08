@@ -1,0 +1,327 @@
+{ message: '15314-1530961771494-615: /signup received new request from ::1',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15314-1530961771494-615: IdentityProvider service will create new user: {"email":"svega56@upcode.co","password":"$2b$10$ISkaRx35S2.Rra85aa9LpuG4nzzFsNbCH4yMyl6pAAxpdIxrUug7.","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-07T11:09:31.585Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15314-1530961771494-615: IdentityProvider created new user: {"email":"svega56@upcode.co","password":"$2b$10$ISkaRx35S2.Rra85aa9LpuG4nzzFsNbCH4yMyl6pAAxpdIxrUug7.","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-07T11:09:31.585Z","sign_up_date_tzo":240,"roles":{},"_id":"5b409f6b042f563bd29e3543"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15314-1530961771494-615: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhNTZAdXBjb2RlLmNvIiwiZXh0cmEiOiJzb21lIGV4dHJhIGNsYWltcyIsImlhdCI6MTUzMDk2MTc3MX0.I2em1waEcMRbTuPxRDPW1I8mYUC-ruA7pUComP3SNFY54uZPoM7r1mtPl4j6XuGyMH2Ueun14aTjnBBxNixOlvo--WBi4gwe1Q0qms7vpO63k4qN4j22mt_aUecsHxKNcpbH51GeTfSVRJ1_08pFZcRg4__HBU7WG7DT3-XE0qGBcluXk5TB72BLc0lFQ9IKP33gEuKMa_h09BL7PneoF-ioOW2dixFRgLMR_n1wsOTimvRTWGrbtfZ_JvTpkiTdsOLqFxceO2AkKqfsgGgfW49iCwAAxkvne6qCMwFQwU0MnCZvoyslsJilJLKPk8Oa0iZoWwViiUoZtgJMUup4og"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15314-1530961835808-27: /signup received new request from ::1',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15314-1530961835808-27: IdentityProvider service will create new user: {"email":"svega56@upcode.co","password":"$2b$10$BpjS2yyz1Zi/YNIT61XJnO3PvrH79I9w7tcbf73n/bd9AxVVK.rNK","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-07T11:10:35.880Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15314-1530961835808-27: Error: User with this email is already registered',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15347-1530961923546-584: /signup received new request from ::1',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15347-1530961923546-584: IdentityProvider service will create new user: {"email":"svega56@upcode.co","password":"$2b$10$hdB4knh0JNxDyo9NrenDoeaHTQ6Kp.9m0nhKS47NEuMGVUNUfNY0e","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-07T11:12:03.643Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15347-1530961923546-584: Error: User with this email is already registered',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15361-1530961962488-906: /signup received new request from ::1',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15361-1530961962488-906: IdentityProvider service will create new user: {"email":"svega57@upcode.co","password":"$2b$10$3P2b/GtImEZXaJA0nyqObuOO.DKuOjSsub5oVcCjtwL5Zlondenl2","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-07T11:12:42.585Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15361-1530961962488-906: IdentityProvider created new user: {"email":"svega57@upcode.co","password":"$2b$10$3P2b/GtImEZXaJA0nyqObuOO.DKuOjSsub5oVcCjtwL5Zlondenl2","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-07T11:12:42.585Z","sign_up_date_tzo":240,"roles":{},"_id":"5b40a02a1ffeb13c01043830"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '15361-1530961962488-906: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhNTdAdXBjb2RlLmNvIiwiZXh0cmEiOiJzb21lIGV4dHJhIGNsYWltcyIsImlhdCI6MTUzMDk2MTk2Mn0.c2eVqDcZGLM09KcLPg0yWrqTmon-C9P109MIvg4Fri0x4Wwnr08VuSIedVoXP4yOJ3DPqlde-sbs3Xvg2x1y3-ySE4t1zJTjmzI1SbS917AbEUcj1CaZpeCV1VLpntjBmelSqMVQ_n6_DQ5r68OxcYg_HEbOuQ_LOSyvNUDEFTKfYHs2cpxHrqRXsX3Wx1oEsDGhed3111QvO48v-iNVltRaCxdxdegSdc7desOLuQSqmRnbj-1irj8-6iMXTv5XZwU65gFg5iyGn5xui9MaZfC8XbZ9yf9aV8y_yWmhYVZTdDbB7eH3sjG3qsVTYJGKQXXXuQlTkFbRJ4yr-KKeGw"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28242: IdentityProvider service will create new user: {"email":"test-1531054838311@email.com","password":"$2b$10$/D0Wq2u2ZuoRN9NmJvq3IOXJ4bQDcb10hgIU2aEqjihNTN611qCGq","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:00:39.090Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28242: IdentityProvider created new user: {"email":"test-1531054838311@email.com","password":"$2b$10$/D0Wq2u2ZuoRN9NmJvq3IOXJ4bQDcb10hgIU2aEqjihNTN611qCGq","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:00:39.090Z","sign_up_date_tzo":240,"roles":{},"_id":"5b420af722db336e5204a888"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28242: IdentityProvider service will create new user: {"email":"test-1531054838311@email.com","password":"$2b$10$CS/yR//lkTB32Gkv8AHV8OnObS3njm4XvzKJhRFseZBcPwMybQ36q","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:00:39.227Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28242: IdentityProvider service will create new user: {"email":"test-1531054839266@email.com","password":"$2b$10$4Jxl4xE2ZH73yCdILz4NY.48CrzR5HxsLqVb.i0sB98sxfXjooN6y","first_name":"","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:00:39.343Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28242: IdentityProvider service will create new user: {"email":"test-1531054839386@email.com","password":"$2b$10$NAulQDsQakloIIyog5PQAunoYx1/nGYrHZUjo/9xq34In4KFnahUK","first_name":122,"last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:00:39.460Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28242: IdentityProvider service will create new user: {"password":"$2b$10$M/h/c9ignydwVxz.ES0QbuMUCythaIp123sqLXJlkKPZrutdT2.KW","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:00:39.578Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28302: IdentityProvider service will create new user: {"email":"test-1531054915972@email.com","password":"$2b$10$g6vmE3Sh.9gWWdincEvW9uf7fupz/tt.kHeOaUXJEuj2HXHBBTG2a","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:01:56.715Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28302: IdentityProvider created new user: {"email":"test-1531054915972@email.com","password":"$2b$10$g6vmE3Sh.9gWWdincEvW9uf7fupz/tt.kHeOaUXJEuj2HXHBBTG2a","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:01:56.715Z","sign_up_date_tzo":240,"roles":{},"_id":"5b420b447f2e0e6e8e58e0e4"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28302: IdentityProvider service will create new user: {"email":"test-1531054915972@email.com","password":"$2b$10$OFobakOWRrGj0JK6rVzprunq3KekfL35hAZCZEyEDP8i3PyVADHvS","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:01:56.848Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28302: IdentityProvider service will create new user: {"email":"test-1531054916888@email.com","password":"$2b$10$aFlrFPAOuVUReRNTz3/GMeo0E6THgwZ7FuEODrCYJBOPPYe2/PJRu","first_name":"","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:01:56.959Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28302: IdentityProvider service will create new user: {"email":"test-1531054917001@email.com","password":"$2b$10$juKVJ9K959eqK.4lo139l.CYk.2bUSYPjJHcqePxBInz8nKPH6fky","first_name":122,"last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:01:57.075Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28302: IdentityProvider service will create new user: {"password":"$2b$10$9L/RjGs.ZyqeewsYlUBQSexlUuDVtKEzKCY5V6JK.4liu5WZW9M9u","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:01:57.191Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28796: IdentityProvider service will create new user: {"email":"test-1531056091587@email.com","password":"$2b$10$sSvliBVGLE9KyDx8Y2UyGeKYls9fYgq/yWqj7bJMU7mMoCNl/jQFq","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:21:32.312Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28796: IdentityProvider created new user: {"email":"test-1531056091587@email.com","password":"$2b$10$sSvliBVGLE9KyDx8Y2UyGeKYls9fYgq/yWqj7bJMU7mMoCNl/jQFq","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:21:32.312Z","sign_up_date_tzo":240,"roles":{},"_id":"5b420fdcda365b707c672aa1"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28796: IdentityProvider service will create new user: {"email":"test-1531056091587@email.com","password":"$2b$10$6pKWWGLty9bfvb97.dnpveD.bzv.2ztVma1rkRiI.ITXk1.qmFoaO","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:21:32.444Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28796: IdentityProvider service will create new user: {"email":"test-1531056092488@email.com","password":"$2b$10$6hw5HEI9MZRD8ybab.2t7eKW9vFVnx3dzvNYEvY35.Br1UvB15kOm","first_name":"","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:21:32.564Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28796: IdentityProvider service will create new user: {"email":"test-1531056092603@email.com","password":"$2b$10$ZxdqLt8r1bA6/vOnKwdR4umRgfs1Y9zj0VYLAZxC.m.MhKA7TQw0C","first_name":122,"last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:21:32.674Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28796: IdentityProvider service will create new user: {"password":"$2b$10$16ksdmbzuZzy4cfF2UpqgOguS3BJJUWPLeYuiw7bNskVOdwXBmdae","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:21:32.785Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29087: IdentityProvider service will create new user: {"email":"test-1531057878438@email.com","password":"$2b$10$LFXwfZnvsGwuBVt1u7q.h.1psLwgFM/MkTrT3t/FMl.KbBw4L3DyK","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:51:19.306Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29087: IdentityProvider created new user: {"email":"test-1531057878438@email.com","password":"$2b$10$LFXwfZnvsGwuBVt1u7q.h.1psLwgFM/MkTrT3t/FMl.KbBw4L3DyK","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:51:19.306Z","sign_up_date_tzo":240,"roles":{},"_id":"5b4216d72af921719f883c33"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29087: IdentityProvider service will create new user: {"email":"test-1531057878438@email.com","password":"$2b$10$2vNrPEubfiNYHlye2ki0yefn9BTA5nP3KcnB2/86pcOztMr.NiFMG","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:51:19.464Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29087: IdentityProvider service will create new user: {"email":"test-1531057879517@email.com","password":"$2b$10$UVYndXQk9OlocJT7yrpTs.WpPg77NfQp6MAf9omXK2p/nsV0NbmJi","first_name":"","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:51:19.592Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29087: IdentityProvider service will create new user: {"email":"test-1531057879637@email.com","password":"$2b$10$XB1YLvRkgo6p0oiYss6VeeyBDgdcEofKv1bwWLXlwsCur2nGayavS","first_name":122,"last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:51:19.716Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29087: IdentityProvider service will create new user: {"password":"$2b$10$chkEW3iag2X2UGOpL17uZuToWIFtwMdQX8LfkF1bUruZOkdvLwCdy","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T13:51:19.835Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29772-1531060900335-722: /signup received new request from ::1',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29772-1531060900335-722: IdentityProvider service will create new user: {"email":"svega57@upcode.co","password":"$2b$10$QYOAtuj0YX2JFSog34ilAehaN5fBq.tLYcTXBMn8qfh/do5T9c4VS","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:41:40.429Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29772-1531060900335-722: Error: User with this email is already registered',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29802-1531060979940-727: /signup received new request from ::1',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29802-1531060979940-727: IdentityProvider service will create new user: {"email":"svega57@upcode.co","password":"$2b$10$75DXDwzroWwCRgoKbgx0YeYX48hdgMGDcV/sL7NymmoJdve63nXrS","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:43:00.035Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29802-1531060979940-727: Error: User with this email is already registered',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29802-1531061007916-112: /signup received new request from ::1',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29802-1531061007916-112: IdentityProvider service will create new user: {"email":"svega59@upcode.co","password":"$2b$10$L37tGb3UT9YUvzpdFhw5l.t5MwIv98GP5FxQ2AP8tWMwndcIOOHyy","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:43:27.999Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29802-1531061007916-112: IdentityProvider created new user: {"email":"svega59@upcode.co","password":"$2b$10$L37tGb3UT9YUvzpdFhw5l.t5MwIv98GP5FxQ2AP8tWMwndcIOOHyy","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:43:27.999Z","sign_up_date_tzo":240,"roles":{},"_id":"5b4223100fc343746a77f7cd"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29802-1531061007916-112: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhNTlAdXBjb2RlLmNvIiwiZXh0cmEiOiJzb21lIGV4dHJhIGNsYWltcyIsImlhdCI6MTUzMTA2MTAwOH0.X32CNyPQKMKm-Euz-DuiSwTmTyLLsK_iRHbhDzVa-7k5UF-uC91hAl8JwdKmoCU68-gN25vjcUWymmnBVN6-iqZXE2a-Zf4CMRV4OHAS7_TpPWBxN6oWCV3HJxM6u4dHtlhEGK07S_nHqBGnE3ARcxdORNvPWK2I6WELJJTiw3O7IYwVQ1cEWBpDiReFInltyQL1eSKLK-VPgK_7KV_cXswiXp4wBpi_e772qkG3a5P0LlINO34aSrhvXrjLF-JtgPbUmDEm3JH4P6FcBS27EoOpfAunc3tGpKh0YgYK6jHF3WvOCyzyQoY_u0-fGB1Cu8PrfAIQOCx3cpMFhz6sVg"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29839-1531061119574-454: /signup received new request from ::1',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29839-1531061119574-454: IdentityProvider service will create new user: {"email":"svega500@upcode.co","password":"$2b$10$ljIH8INs6/ELXLc2wWvlI.ebz/ITepd3Ega.RHQVnHLtYqDYIoNAq","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:45:19.664Z","sign_up_date_tzo":240,"roles":{}}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29839-1531061119574-454: IdentityProvider created new user: {"email":"svega500@upcode.co","password":"$2b$10$ljIH8INs6/ELXLc2wWvlI.ebz/ITepd3Ega.RHQVnHLtYqDYIoNAq","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:45:19.664Z","sign_up_date_tzo":240,"roles":{},"_id":"5b42237f27b857748f142b14"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29839-1531061119574-454: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhNTAwQHVwY29kZS5jbyIsImV4dHJhIjoic29tZSBleHRyYSBjbGFpbXMiLCJpYXQiOjE1MzEwNjExMTl9.wvEa7Kmd-eYyVoVFZtnUE3lpecGaoDLPnHMxfnhgvteiThICs8f3naqgEvsiyww97gsn_b--giWZfJ8-_YNp2oyIXEEYpCqd_fyKK7_kgfoG0dfIG8DXty1RMUUZqtr0E_xZhS3s6ldU3TWtJCa5s3e0wzh6C2MUePD99W4gV_9AzPXbI1lb3VDCAylwZjZZTu6Drt2pYktnmltxTsGXs8oTjjWcgZBJ3gUcZ5JaWjTD0Kiv1MnnTUvx9dd7EcElGgDKzX1oGIdLLnGn7ma2__1ilBg9OvUfGx0T791LWfj_LLS15-CRU9lED6yC9-mI2O9X1qBD4mvoqqWCf0pQ8Q"}',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29869-1531061175930-999: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29869-1531061175930-999: IdentityProvider service will create new user: {"email":"svega500@upcode.co","password":"$2b$10$IxY22P/frsyjtfGRQQn6oO.1L882avGJeFvcw4bABKIwEPxZui4R2","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:46:16.020Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29869-1531061175930-999: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29957-1531061328410-578: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29957-1531061328410-578: IdentityProvider service will create new user: {"email":"svega500@upcode.co","password":"$2b$10$Jimxc3aCzgHou0IbMZ8yTOz.xEjWDdk0b434NiVEr4OdQ/a5xX5G6","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:48:48.499Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29957-1531061328410-578: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29976-1531061416561-626: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29976-1531061416561-626: IdentityProvider service will create new user: {"email":"svega500@upcode.co","password":"$2b$10$7LkKHU6lUQ8GJzhBYzm3q.j5NAOa9OHCwLB5gyAe8hSlT6bmM/d0G","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:50:16.655Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29976-1531061416561-626: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29995-1531061494838-645: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29995-1531061494838-645: IdentityProvider service will create new user: {"email":"svega500@upcode.co","password":"$2b$10$Kjd/AkQaqNGsZUd2eKJIUeC9O1sXH3IF6FhUwBGIRse6tdsOEEY6y","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:51:34.930Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29995-1531061494838-645: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29995-1531061563150-305: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29995-1531061563150-305: IdentityProvider service will create new user: {"email":"svega500@upcode.co","password":"$2b$10$XdyH520aTK6HW2dOd4Wvee1OW6Lj9hap.25ROntYqPa7dCvwrwD/K","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:52:43.223Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '29995-1531061563150-305: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30134-1531061900289-436: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30134-1531061900289-436: IdentityProvider service will create new user: {"email":"svega500@upcode.co","password":"$2b$10$dEm9Xk4Wbe/fXsE9rBpPHeAy/jQkPBWh1p.6LMBzdnk9b0aMsQzVK","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T14:58:20.378Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30134-1531061900289-436: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30182-1531062019895-719: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30182-1531062019895-719: IdentityProvider service will create new user: {"email":"svega500@upcode.co","password":"$2b$10$PQBsO8CAcy2AF47vdcXjn.0FVFcHLfkApAeACn.TjVpjgm/hDSdye","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T15:00:19.983Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30182-1531062019895-719: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30207-1531062149122-297: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30207-1531062149122-297: IdentityProvider service will create new user: {"email":"svega501@upcode.co","password":"$2b$10$YjQqlKzCBVMjg2KhGYCb8eMtUdaWWHHs0qWFNBv9Wg2/TNVk4PHYa","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T15:02:29.211Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30207-1531062149122-297: IdentityProvider created new user: {"email":"svega501@upcode.co","password":"$2b$10$YjQqlKzCBVMjg2KhGYCb8eMtUdaWWHHs0qWFNBv9Wg2/TNVk4PHYa","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T15:02:29.211Z","sign_up_date_tzo":240,"roles":{},"_id":"5b422785bfa54e75ffb3e34b"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '30207-1531062149122-297: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhNTAxQHVwY29kZS5jbyIsImV4dHJhIjoic29tZSBleHRyYSBjbGFpbXMiLCJpYXQiOjE1MzEwNjIxNDl9.H9ldjlQm-d4NX_E-SDF4dYSTyPQIDVVmziSpoW2XklBTHp_81Tc7Ta3sD2Vex4Qsqt5CVUvaOdxeHd6II5krH8OSKd-BDsPHmZRkYrjo7ZPBo972v8MtyQK_eyzVFPavpz6ML_AWphS7iaPYIcLmbNoy52Dex2LN_Yul6Fz3P157km5Qa-3Nw6t8coRwf46LNirqVy0lF2jhpHKZf3ECeCgxmkPyZFKGU1g33cbqyjT-RT6NRTDh02idIyE7cMuHW3hYcXoY2TgSo8-19yDOE5fh8R1yv2dFEjJwlx-wVdgNEQutwOeyE0HAV2FzRBTE23BcXrAixe6XWU8B7zXVIw"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-30616-1531064001123-495: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-30616-1531064001123-495: IdentityProvider service will create new user: {"email":"svega501@upcode.co","password":"$2b$10$.vfH6zpPQqPGh57oIxwXcefRYgk5GzLYw/Yn9Xb.qaucR6dw5A3Hq","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T15:33:21.205Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-30616-1531064001123-495: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-30635-1531064085108-797: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-30635-1531064085108-797: IdentityProvider service will create new user: {"email":"svega502@upcode.co","password":"$2b$10$2DMbFoguHYNfxWeSmw8IsOvdTzwY8Rw00IQllTKQzWksWIrG8hGOG","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T15:34:45.186Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-30635-1531064085108-797: IdentityProvider created new user: {"email":"svega502@upcode.co","password":"$2b$10$2DMbFoguHYNfxWeSmw8IsOvdTzwY8Rw00IQllTKQzWksWIrG8hGOG","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T15:34:45.186Z","sign_up_date_tzo":240,"roles":{},"_id":"5b422f15b0c6f677ab0b006f"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-30635-1531064085108-797: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhNTAyQHVwY29kZS5jbyIsImV4dHJhIjoic29tZSBleHRyYSBjbGFpbXMiLCJpYXQiOjE1MzEwNjQwODV9.WXhWqOZS2XEkCIrBcKg9IOcVGSgCKXij46y4P39N7lccyAIRzxd1i4ia8jQ8h9FsQnGVarWfdXgBlf_pxnmP7kB5eg7_MP5u0KQtXFxlTWTxVPmPGPZvKSSaU4U28QJuUiiKTUy0Gb4kJkfn4Wt01qXEGKlRZgyDz5e_XcxH5uhEhgo29wmvejxKkO6Kl_Lu4suA8KY5LlGSFjoPjkg1lJpi9IOJH5S7FFuSLlA2g2jDt5Lbu-9v2-Uvd-fpgy7i3M8t_Gej1nwfAOl7Q8KW_S993gfpK8214VLTssIg2tUE1RqwCajMTeOdx4Fl9ArRbakeMCQYd9qg-sDrfk-7Bg"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: IdentityProvider service will create new user: {"email":"test-1531067658975@email.com","password":"$2b$10$/WSZiuCTcl1GOkQojYNJLesJFyg2k/uEXqHmK1nNo1BvTi7aIuhfm","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T16:34:19.845Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: IdentityProvider created new user: {"email":"test-1531067658975@email.com","password":"$2b$10$/WSZiuCTcl1GOkQojYNJLesJFyg2k/uEXqHmK1nNo1BvTi7aIuhfm","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T16:34:19.845Z","sign_up_date_tzo":240,"roles":{},"_id":"5b423d0b4997d37ac23b4bff"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: Sending a verification email to test-1531067658975@email.com \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: IdentityProvider service will create new user: {"email":"test-1531067658975@email.com","password":"$2b$10$VIpoBBSpsGCdnhYoBdY1WeWdGblPxL0JfXB2F4nVx2n0caYASuRi6","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T16:34:19.976Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: IdentityProvider service will create new user: {"email":"test-1531067660022@email.com","password":"$2b$10$a/5hfroJTWD.zVePkc/Gm.jCzWzx5KCZCsPng32JSptd8KCdewTVa","first_name":"","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T16:34:20.100Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: IdentityProvider service will create new user: {"email":"test-1531067660146@email.com","password":"$2b$10$i7wirRtWMEwQurgR.voZzutq6WsU83KnlwXACkZAbsKgFrdyVhkae","first_name":122,"last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T16:34:20.220Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: IdentityProvider service will create new user: {"password":"$2b$10$6svDujsUJ1AePDymbO0Zh.x7BdkJ9mg/5kCeRqB3BVNkeQDiyg302","first_name":"firstName","last_name":"lastName","verified":false,"active":false,"sign_up_date":"2018-07-08T16:34:20.340Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: Fetching user from DB \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: test-1531067658975@email.com could not authenticate. \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: Fetching user from DB \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: svega@upcode.co could not authenticate. \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: Fetching user from DB \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '31426: svega@upcode.co authenticated. \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-31472-1531067765262-860: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-31472-1531067765262-860: IdentityProvider service will create new user: {"email":"svega502@upcode.co","password":"$2b$10$RZfQQLHQl1EK8OTjKsonCu5tuNtirNKsTOpOzOYXomD9rDqPsklo.","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T16:36:05.346Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-31472-1531067765262-860: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-31646-1531069575752-787: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-31646-1531069575752-787: IdentityProvider service will create new user: {"email":"svega@upcode.co","password":"$2b$10$yZeKt5riZJyfNIgTPT1o0u0BN5JW.rmdcK3728pzgeW9ru/1qyePC","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T17:06:15.832Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-31646-1531069575752-787: IdentityProvider created new user: {"email":"svega@upcode.co","password":"$2b$10$yZeKt5riZJyfNIgTPT1o0u0BN5JW.rmdcK3728pzgeW9ru/1qyePC","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-08T17:06:15.832Z","sign_up_date_tzo":240,"roles":{},"_id":"5b4244872a24bb7b9e952f0a"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-31646-1531069575752-787: Sending a verification email to svega@upcode.co \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-31646-1531069575752-787: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhQHVwY29kZS5jbyIsImV4dHJhIjoic29tZSBleHRyYSBjbGFpbXMiLCJpYXQiOjE1MzEwNjk1NzV9.QTwO7ij_ZkK8bKdETO6pVP5s9yJpM_qFsxTRdDQRRFIdEbqsDM33jc50T7lLZdUl9hcAl4eUSRtgxUxPmV4ZjQyqTQJ0PEBfM8ggxNbQU71vgkEJ8KN28uPOIa5b9GeSdg9RP8EBU7uqHRhLxCT4RhiZVQqT3qK13RzJWKDz08HeQWns5Rkhlthuc856v_MA50RgFiEbSU1bPIcw4lnVwuBg4-WNRy3K97fhaZ8nLplM56XEiaOe5ZhGH9uZZ2Rc3kIJgXYYW7bfOm6rmV529qyXBUO2stcXjqeP_YthkmoPwU23O3-BrqyjeBK28OrnbyCn7zO6Jem62PIqjyTXOQ"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '002-31646-1531069793141-174: /verify?id=5b4244872a24bb7b9e952f0a received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '002-31646-1531069793141-174: User with id 5b4244872a24bb7b9e952f0a requested to be verified. \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '002-31646-1531069793141-174: User with id 5b4244872a24bb7b9e952f0a successfully verified. \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '002-31646-1531069793141-174: Success: {"modifiedUser":{"_id":"5b4244872a24bb7b9e952f0a","email":"svega@upcode.co","password":"$2b$10$yZeKt5riZJyfNIgTPT1o0u0BN5JW.rmdcK3728pzgeW9ru/1qyePC","first_name":"sebastian","last_name":"vega","verified":true,"active":true,"sign_up_date":"2018-07-08T17:06:15.832Z","sign_up_date_tzo":240,"roles":{}}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }

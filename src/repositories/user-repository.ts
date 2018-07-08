@@ -1,12 +1,12 @@
 import { Collection, Db, InsertOneWriteOpResult, FindAndModifyWriteOpResultObject, ObjectId } from 'mongodb';
-import { AlreadyRegisteredError, FieldValidationError } from './error-definitions';
+import { AlreadyRegisteredError, FieldValidationError } from '../services/identity-provider/error-definitions';
 
 export class UserRepository {
     
     public userCollection: Collection;
 
     constructor(identityProviderDb: Db) {
-        this.userCollection = identityProviderDb.collection('generic-users');
+        this.userCollection = identityProviderDb.collection('app-users');
     }
 
     getUserByEmail(email: string): Promise<any> {
@@ -14,7 +14,7 @@ export class UserRepository {
             .then( doc => doc);
     }
 
-    createUser(newUser): Promise<any> {
+    createUser(newUser: any): Promise<any> {
         return this.userCollection.insertOne(newUser)
             .then( (result: InsertOneWriteOpResult) => {
                 const insertedDocument = result.ops[0];
@@ -27,7 +27,17 @@ export class UserRepository {
             });
     }
 
-    updateUserVerification(userId): Promise<FindAndModifyWriteOpResultObject> {
-       return this.userCollection.findOneAndUpdate({"_id": new ObjectId(userId)}, { $set: {verified: true, active: true} });
+    updateUserVerification(userId: string): Promise<FindAndModifyWriteOpResultObject> {
+        return this.userCollection.findOneAndUpdate (
+            {
+                "_id": new ObjectId(userId)
+            }, 
+            { 
+                $set: { verified: true, active: true } 
+            },
+            {
+                returnOriginal: false
+            }
+        );
     }
 }

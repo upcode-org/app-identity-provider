@@ -1,8 +1,7 @@
-import { UserRepository } from "../../repositories/user-repository";
-
 export interface IIdentityProvider {
     loginUser(loginUserRequest: LoginUserRequest): Promise<LoginUserResponse>;
     signupUser(signupUserRequest: SignupUserRequest): Promise<SignupUserResponse>;
+    verifyUser(userId: string): Promise<VerifyUserResponse>;
 }
 
 export class LoginUserRequest {
@@ -25,5 +24,9 @@ export class SignupUserRequest {
 export class SignupUserResponse {
     authenticated: boolean= false;
     token: string= null;
+}
+
+export class VerifyUserResponse {
+    modifiedUser: any
 }
 

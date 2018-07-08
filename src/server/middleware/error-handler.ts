@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { MonitoringService } from '../../services/monitoring-service';
-import { AppContainer } from 'lib/container';
+import { AppContainer } from 'src/lib/container';
 
 type RequestWithContainer = Request & { container: AppContainer };
 

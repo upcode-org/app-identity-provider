@@ -8,13 +8,13 @@
 //                                       __/ | | |                                              
 //                                      |___/  |_|                                              
 
-import { AppContainer } from '../lib/container';
+import { AppContainer } from './lib/container';
 export const container = new AppContainer();
 
 //*******************************************************************/
-//Data dependecies 
-import { mongoConnection } from './data/database';
-import { UserRepository } from './repositories/user-repository';
+//Connection dependecies 
+import { mongoConnection } from './connections/database';
+import { rabbitConnection, rabbitChannel } from './connections/rabbitMQ';
 //*******************************************************************/
 
 //*******************************************************************/
@@ -25,9 +25,13 @@ import { logger } from './services/logger';
 
 //*******************************************************************/
 //Application
-import { IdentityProvider } from './services/identity-provider';
+import { IdentityProvider } from './services/identity-provider/identity-provider';
 import { VerificationEmailProducer } from './services/verification-email-producer';
-import { rabbitConnection } from './data/rabbitMQ';
+//*******************************************************************/
+
+//*******************************************************************/
+//Domain
+import { UserRepository } from './repositories/user-repository';
 //*******************************************************************/
 
 
@@ -35,17 +39,22 @@ export const containerResolver = async (): Promise<AppContainer> => {
     try {
         const identityProviderDb = await mongoConnection();
         const rmqConnection = await rabbitConnection();
+        const rmqChannel = await rabbitChannel(rmqConnection);
         
         container.singleton('rmqConnection', rmqConnection);
+        container.singleton('rmqChannel', rmqChannel);
         container.singleton('verificationEmailProducer', VerificationEmailProducer, ['rmqConnection'] );
         container.singleton('identityProviderDb', identityProviderDb );
         container.singleton('userRepository', UserRepository, ['identityProviderDb'] );
         container.singleton('logger', logger);
         
-        container.scoped('processInstanceId', process.pid );
-        container.scoped('queueName', 'identity-provider-logs' );
-        container.scoped('monitoringService', MonitoringService, ['logger', 'processInstanceId', 'rmqConnection', 'queueName']);
-        container.scoped('identityProvider', IdentityProvider, ['userRepository', 'verificationEmailProducer', 'monitoringService'] );
+        // Will be registered on each req. These will only be available in the container where they were registered
+        container.scopedDependency('processInstanceId', process.pid );
+        container.scopedDependency('queueName', 'app-identity-provider-logs' );
+        
+        // Will be instantiated in each req. One or more of the dependencies will be a scoped dependency.
+        container.scopedSingleton('monitoringService', MonitoringService, ['logger', 'processInstanceId', 'rmqConnection', 'rmqChannel', 'queueName']);
+        container.scopedSingleton('identityProvider', IdentityProvider, ['userRepository', 'verificationEmailProducer', 'monitoringService'] );
 
         return container;
 

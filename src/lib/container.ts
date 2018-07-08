@@ -3,10 +3,12 @@ export class AppContainer {
     _services;
     _singletons;
     _scopedSingletons;
+    _scopedServices;
     
     constructor(services?, singletons?) {
         this._services = services ? services : new Map();
         this._singletons = singletons ? singletons : new Map();
+        this._scopedServices = new Map();
         this._scopedSingletons = new Map();
     }
 
@@ -18,16 +20,18 @@ export class AppContainer {
         this._services.set(name, {definition: definition, dependencies: dependencies, singleton:true})
     }
 
-    scoped(name, definition, dependencies?) {
+    scopedSingleton(name, definition, dependencies?) {
         this._services.set(name, {definition: definition, dependencies: dependencies, scoped:true})
     }
 
-    value(name, definition, dependencies?) {
-        this._services.set(name, {definition: definition, dependencies: dependencies, value:true})
+    scopedDependency(name, definition, dependencies?){
+        this._scopedServices.set(name, {definition: definition, dependencies: dependencies})
     }
 
     get(name) { 
-        const c = this._services.get(name)
+        let c = this._services.get(name)
+        if(!c) c = this._scopedServices.get(name)
+
         if(this._isClass(c.definition)) {
 
             if(c.singleton) {

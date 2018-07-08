@@ -5,9 +5,9 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "npm run server",
-    "server": "nodemon dist/src/server/server.js",
+    "server": "nodemon compiled/server/server.js",
     "compile": "tsc -w",
-    "test": "mocha -r ts-node/register --exit 'src/**/*.spec.ts'"
+    "test": "TEST=true mocha -r ts-node/register --exit 'src/**/*.spec.ts'"
   },
   "repository": {
     "type": "git",

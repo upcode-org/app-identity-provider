@@ -2,17 +2,18 @@ import { readFileSync } from 'fs';
 import { sign } from 'jsonwebtoken';
 import * as bcrypt from 'bcrypt';
 
-import { UserRepository } from '../repositories/user-repository';
+import { UserRepository } from '../../repositories/user-repository';
 import {
     IIdentityProvider,
     LoginUserRequest,
     LoginUserResponse,
     SignupUserRequest,
     SignupUserResponse,
-} from '../services/service-contracts/identity-provider-contracts';
-//import { ArchivingService } from './archiving-service';
-import { VerificationEmailProducer } from './verification-email-producer';
-import { MonitoringService } from './monitoring-service';
+    VerifyUserResponse,
+} from '../../services/identity-provider/identity-provider-contracts';
+import { VerificationEmailProducer } from '../verification-email-producer';
+import { MonitoringService } from '../monitoring-service';
+import { FindAndModifyWriteOpResultObject } from 'mongodb';
 
 const cert = readFileSync('.config/private_key_06-10-18.key');
 
@@ -28,18 +29,22 @@ export class IdentityProvider implements IIdentityProvider {
         this.monitoringService = monitoringService;
     }
     
-    loginUser(loginUserRequest: LoginUserRequest): Promise<LoginUserResponse> {
+    async loginUser(loginUserRequest: LoginUserRequest): Promise<LoginUserResponse> {
         let loginUserResponse = new LoginUserResponse();
+
+        this.monitoringService.log(`Fetching user from DB`);
 
         return this.userRepository.getUserByEmail(loginUserRequest.email)
             .then( async (user) => {
-                if( user && user.verified && await this.doesPasswordMatch(loginUserRequest.password, user.password) ) {
+                if( user && user.verified && user.active && await this.doesPasswordMatch(loginUserRequest.password, user.password) ) {
                     const token = sign({ email: loginUserRequest.email, extra: 'some extra claims'}, cert, {algorithm: 'RS256'});
                     loginUserResponse.authenticated = true;
                     loginUserResponse.token = token;
+                    this.monitoringService.log(`${loginUserRequest.email} authenticated.`);
                     return loginUserResponse;
                 }
                 // credentials not authenticated
+                this.monitoringService.log(`${loginUserRequest.email} could not authenticate.`);
                 return loginUserResponse;
             });
     }
@@ -76,8 +81,17 @@ export class IdentityProvider implements IIdentityProvider {
             });
     }
 
-    verifyUser(userId) {
-        return this.userRepository.updateUserVerification(userId);
+    async verifyUser(userId: string): Promise<VerifyUserResponse> {
+        this.monitoringService.log(`User with id ${userId} requested to be verified.`)
+
+        const  response = new VerifyUserResponse();
+        const result: FindAndModifyWriteOpResultObject = await this.userRepository.updateUserVerification(userId);
+        
+        if(result.ok === 1) response.modifiedUser = result.value;
+        if(result.ok !== 1) throw new Error('Could not update user');
+        
+        this.monitoringService.log(`User with id ${userId} successfully verified.`)
+        return response;
     }
 
     private sendToEmailQueue(createdUser): void {
@@ -88,8 +102,8 @@ export class IdentityProvider implements IIdentityProvider {
             "firstName": createdUser.first_name,
             "lastName": createdUser.last_name
         }
-
-        this.verificationEmailProducer.produceMsg(msg)
+        this.monitoringService.log(`Sending a verification email to ${createdUser.email}`)
+        this.verificationEmailProducer.produceMsg(msg);
     }
 
     private hashPassword(password): Promise<string> {

@@ -1,6 +1,5 @@
 import { Logger } from "winston";
 import { Connection, Channel } from "amqplib";
-import { rabbitChannel } from "../data/rabbitMQ";
 
 export class MonitoringService { 
     
@@ -10,34 +9,22 @@ export class MonitoringService {
     ch: Channel;
     queueName: string;
 
-    constructor(logger: Logger, processInstanceId, rmqConnection, queueName) {
+    constructor(logger: Logger, processInstanceId, rmqConnection, rmqChannel, queueName) {
         this.processInstanceId = processInstanceId;
         this.logger = logger;
         this.connection = rmqConnection;
+        this.ch = rmqChannel;
         this.queueName = queueName;
     }
 
-    async connect(): Promise<void> {
-        try {
-            //this.connection = await rabbitConnection();
-            this.ch = await rabbitChannel(this.connection);
-            console.log('VerificationEmailProducer connected to RabbitMQ Channel');
-        } catch(err) {
-            //report
-            console.log('VerificationEmailProducer could not connect to RabbitMQ Channel');
-            return null;
-        }
-        //this.connection.on('close', this.connect.bind(this));
-    }
-
     log(msg) {
-        this.report(`${this.processInstanceId}: ${msg}`);
-        this.logger.info(`${this.processInstanceId}: ${msg}`);
-        //this.logger.error('test');
+        if(!process.env.TEST) {
+            this.report(`${this.processInstanceId}: ${msg}`);
+            this.logger.info(`${this.processInstanceId}: ${msg} \n`);
+        }
     }
 
-    async report(msg) {
-        if(!this.ch) await this.connect();
+    async report(msg): Promise<boolean> {
 
         const msgBuffer = new Buffer(JSON.stringify(msg));
 
@@ -45,7 +32,7 @@ export class MonitoringService {
             return this.ch.sendToQueue(this.queueName, msgBuffer);
         } catch(err) {
             //report err
-            console.log(err);
+            this.log(err && err.message ? err.message : 'Error sending to Rabbit Queue');
         }
     }
 }

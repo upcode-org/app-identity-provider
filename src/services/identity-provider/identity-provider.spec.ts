@@ -1,9 +1,9 @@
 import { IdentityProvider } from './identity-provider';
 import { expect } from 'chai';
 import 'mocha';
-import { containerResolver } from '../composition-root';
-import { LoginUserRequest, SignupUserRequest, SignupUserResponse } from './service-contracts/identity-provider-contracts';
-import { UserRepository } from '../repositories/user-repository';
+import { containerResolver } from '../../composition-root';
+import { LoginUserRequest, SignupUserRequest, SignupUserResponse } from './identity-provider-contracts';
+import { UserRepository } from '../../repositories/user-repository';
 import { DeleteWriteOpResultObject } from 'mongodb';
 
 describe('Identity Provider Test:', () => {

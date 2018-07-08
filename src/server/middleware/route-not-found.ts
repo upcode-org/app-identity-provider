@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { AppContainer } from '../../../lib/container';
+import { AppContainer } from '../../lib/container';
 
 type RequestWithContainer = Request & {container: AppContainer};
 
