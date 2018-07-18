@@ -34,10 +34,10 @@ if (false) { //cluster.isMaster
             const monitoringService: MonitoringService = container.get('monitoringService');
 
             const app = express();
-            const port = 3088;
+            const port = 3000;
 
-            app.use(attachContainer);
             app.use(bodyParser.json());
+            app.use(attachContainer);
             app.use('/v1.0', router);
             app.use(routeNotFoundHandler);
             app.use(errorHandler);

@@ -26,12 +26,11 @@ class MonitoringService {
         return __awaiter(this, void 0, void 0, function* () {
             const msgBuffer = new Buffer(JSON.stringify(msg));
             try {
-                //console.log('SENDING TO:', this.queueName, msg + '\n' );
                 return this.ch.sendToQueue(this.queueName, msgBuffer);
             }
             catch (err) {
                 //report err
-                console.log(err);
+                this.log(err && err.message ? err.message : 'Error sending to Rabbit Queue');
             }
         });
     }

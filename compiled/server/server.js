@@ -27,9 +27,9 @@ else {
         .then((container) => {
         const monitoringService = container.get('monitoringService');
         const app = express();
-        const port = 3088;
-        app.use(attach_container_1.attachContainer);
+        const port = 3000;
         app.use(bodyParser.json());
+        app.use(attach_container_1.attachContainer);
         app.use('/v1.0', routes_1.router);
         app.use(route_not_found_1.routeNotFoundHandler);
         app.use(error_handler_1.errorHandler);

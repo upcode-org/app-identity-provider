@@ -325,3 +325,6 @@
 { message: '002-31646-1531069793141-174: Success: {"modifiedUser":{"_id":"5b4244872a24bb7b9e952f0a","email":"svega@upcode.co","password":"$2b$10$yZeKt5riZJyfNIgTPT1o0u0BN5JW.rmdcK3728pzgeW9ru/1qyePC","first_name":"sebastian","last_name":"vega","verified":true,"active":true,"sign_up_date":"2018-07-08T17:06:15.832Z","sign_up_date_tzo":240,"roles":{}}} \n',
   level: 'info',
   [Symbol(level)]: 'info' }
+{ message: '56721: Uncaught exception: Error: read ETIMEDOUT \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
