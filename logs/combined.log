@@ -328,3 +328,156 @@
 { message: '56721: Uncaught exception: Error: read ETIMEDOUT \n',
   level: 'info',
   [Symbol(level)]: 'info' }
+{ message: '001-27104-1532005841555-729: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27104-1532005841555-729: IdentityProvider service will create new user: {"email":"svega@upcode.co","password":"$2b$10$zP6LbK49thYNiwjOgnut7enNg.vtIhOiflxqtDPcmx88centLjECW","first_name":"sebastian","verified":false,"active":false,"sign_up_date":"2018-07-19T13:10:41.634Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27104-1532005841555-729: Error: Document failed validation \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27104-1532006013981-699: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27104-1532006013981-699: IdentityProvider service will create new user: {"email":"svega@upcode.co","password":"$2b$10$UlR9E.9gmONOcaJvbt9SkelvNxm9PLwydmwkjMCZoi8VYnLaJ9mY.","first_name":"sebastian","verified":false,"active":false,"sign_up_date":"2018-07-19T13:13:34.059Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27104-1532006013981-699: Error: Document failed validation \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27160-1532006099483-8: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27160-1532006099483-8: IdentityProvider service will create new user: {"email":"svega@upcode.co","password":"$2b$10$vnfVyDeo69Bzp5zwP1QDpeEGjkGr4UvavlTRiDFBfl24y1ndnrGri","first_name":"sebastian","verified":false,"active":false,"sign_up_date":"2018-07-19T13:14:59.564Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27160-1532006099483-8: Error: Document failed validation \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27160-1532006136633-845: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27160-1532006136633-845: IdentityProvider service will create new user: {"email":"svega@upcode.co","password":"$2b$10$rvsSn.oGaYfhvla4vzm3UO.zhE0fwNzaVoSFGDZe9f/pE2wOTx2RW","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-19T13:15:36.707Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27160-1532006136633-845: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27180-1532006163380-920: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27180-1532006163380-920: IdentityProvider service will create new user: {"email":"svega13@upcode.co","password":"$2b$10$ti7R5yJZSQziB/LiMGJvCum.Ii0NbeB62JnrWPoIH/dBOgsAhv8QO","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-19T13:16:03.460Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27180-1532006163380-920: IdentityProvider created new user: {"email":"svega13@upcode.co","password":"$2b$10$ti7R5yJZSQziB/LiMGJvCum.Ii0NbeB62JnrWPoIH/dBOgsAhv8QO","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-19T13:16:03.460Z","sign_up_date_tzo":240,"roles":{},"_id":"5b508f13d10a416a2c12e695"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27180-1532006163380-920: Sending a verification email to svega13@upcode.co \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-27180-1532006163380-920: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhMTNAdXBjb2RlLmNvIiwiZXh0cmEiOiJzb21lIGV4dHJhIGNsYWltcyIsImlhdCI6MTUzMjAwNjE2M30.JNvwt468Z_lXMMb0yvoKsG_Ed4Nsqk8jd5Dgxqg302xx0p3OtEWi8OZT3nnudvnBDz1YWkH6GDsS_9UpLX6oN2io2Bw7qZxFNWjGbVVb2uL1tFexp-vc0Go4OkyvEzyzjj9DDgIvVcA9lQbXBYzJiYV45vjisyZqY06-h18u13etn7-HCrn6OBARdR9uio086cHMDUbP6GpTRf0VbG1Gu-19yTa5HyaERd4sjno_62QB2CTmffhhYBBt0gNfCX8t_df97PlFijDUVYjtqmqZ57zwmdoc9kK76sFXNhnjG542H2I1kp2EYwnYxWeeT9HmBmnTyobDixV1EjHrYGp5oQ"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '28136: Uncaught exception: Error: read EHOSTUNREACH \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532081703168-426: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532081703168-426: IdentityProvider service will create new user: {"email":"svega14@upcode.co","password":"$2b$10$3IHg0GONlS31PSi3.6Lq.OWTRJZnnfs1oO6W7KsGRUVACxxXs089e","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:15:03.248Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532081703168-426: IdentityProvider created new user: {"email":"svega14@upcode.co","password":"$2b$10$3IHg0GONlS31PSi3.6Lq.OWTRJZnnfs1oO6W7KsGRUVACxxXs089e","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:15:03.248Z","sign_up_date_tzo":240,"roles":{},"_id":"5b51b6274cd4867e2bae085f"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532081703168-426: Sending a verification email to svega14@upcode.co \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532081703168-426: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhMTRAdXBjb2RlLmNvIiwiZXh0cmEiOiJzb21lIGV4dHJhIGNsYWltcyIsImlhdCI6MTUzMjA4MTcwM30.qWBk7_J_SlxatQv0IQm7qk2-GiwgDtZow57QJUgXqQ-Vi1FNnbdArcgfTkMVFllnya7zV-uZBI77k0o_OD3OurntOAprLmNsrTOSSamY-v_5Mi5J5vcsK5aMPM70m9TPcjuw-boxKep_EH_P9drzF5iEyj0-A6JXbWytoCD5Va2q0TeSC6u5wGFGMUJ0pQ3acd3iAWLJE6O8OY_EhLD25MAXqPI_s1AFwbC1597UnHe4gEbnk8z4206msG9XyiMH3P_VdudJA1kYt1sIrkCQgl6ptmFy76QDqLCvqojHlU1UbDkXqqGCBV5-OJ1TdkQhdNGHrfrlFMs3i0R6RIDlCQ"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082200901-791: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082200901-791: IdentityProvider service will create new user: {"email":"svega15@upcode.co","password":"$2b$10$NrXh/1K4Hk7rYH9LG8rPQ.e4B73/WdmzgMNJEnQmzRYhYL83idq6a","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:23:20.979Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082200901-791: IdentityProvider created new user: {"email":"svega15@upcode.co","password":"$2b$10$NrXh/1K4Hk7rYH9LG8rPQ.e4B73/WdmzgMNJEnQmzRYhYL83idq6a","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:23:20.979Z","sign_up_date_tzo":240,"roles":{},"_id":"5b51b8184cd4867e2bae0860"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082200901-791: Sending a verification email to svega15@upcode.co \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082200901-791: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhMTVAdXBjb2RlLmNvIiwiZXh0cmEiOiJzb21lIGV4dHJhIGNsYWltcyIsImlhdCI6MTUzMjA4MjIwMX0.0w5CdDlAMRWTCgKAfh8mHZxISSSt0gDnshxVCzgEtqQfn7I1phubTMgslFa83pFj12VRIcnQouc_JURpDSlPrlcMBWpSs4b-EejOwX1XK-xLsjeQ68cZ9YSX5ARBw7RMAI0-eTZR2kw9OW4BK5J9-eRajgFsEf0gxWxBO7d6iJejOMdUXhyZa_a0SEiDrl0qs9G-1ZYZ6qZf5xgDdDTDav7_YXLbfFgxLf-JpCC5Jz1GsRf0BhogYEoESqghS7nrxdkGYrG9UgjX3poXd6gELeCurdPp61KVOm1uk0wOUAACbZOHvzAODDaJcP4a97Hg-XcR18gVn0QGVn-BT4y9uQ"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082232823-952: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082232823-952: IdentityProvider service will create new user: {"email":"svega16@upcode.co","password":"$2b$10$22B6n5RbgTet3ipy2Opdbub1HVzt7AijVacXHG9vDmWMek2Z1cply","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:23:52.900Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082232823-952: IdentityProvider created new user: {"email":"svega16@upcode.co","password":"$2b$10$22B6n5RbgTet3ipy2Opdbub1HVzt7AijVacXHG9vDmWMek2Z1cply","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:23:52.900Z","sign_up_date_tzo":240,"roles":{},"_id":"5b51b8384cd4867e2bae0861"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082232823-952: Sending a verification email to svega16@upcode.co \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082232823-952: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhMTZAdXBjb2RlLmNvIiwiZXh0cmEiOiJzb21lIGV4dHJhIGNsYWltcyIsImlhdCI6MTUzMjA4MjIzMn0.aDmumb63uf2PfzTBlRLWY3I2L1VW3yL1P41PSyAPuHHtxFAOMGqIg6PTchLzi5DvVlsCVCnOACs6rwD-DHmFf0a96cF_NQT4YEyvV5bRpEZcD4LBzVswNEHtdShuO2_IpCGa4lIAtZfG2Yk9nbiL6hTFH_-vu8WR_JyyTlc8Hrq6r5BoFfFFzGwinm_Ep1eGZVtI2t_k_kRfbXC4wpSFg7aRvMcS6ioE2y0W1g-p07CmFRqguAMXpyRrHbrWpg3cz23jFp9LBf4BYniEhQYd14o_cxP-pNo_kC2qjktBy6aq8roNfJFXg4UQOlO-vupSOD8zhQoxdW2unS6yBtL_hQ"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082261863-782: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082261863-782: IdentityProvider service will create new user: {"email":"svega16@upcode.co","password":"$2b$10$O21PAJXd0ubu4MSIWVPQceUBGky8UeH4NC5RVQRX5votYl9sFd8KO","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:24:21.943Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082261863-782: Error: User with this email is already registered \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082279107-976: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082279107-976: IdentityProvider service will create new user: {"email":"svega17@upcode.co","password":"$2b$10$mS0O36wHA9rYNt.iRhjCUO.c0sPZ84LfaTnOZRqd3pG0kTabo5uI2","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:24:39.190Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082279107-976: IdentityProvider created new user: {"email":"svega17@upcode.co","password":"$2b$10$mS0O36wHA9rYNt.iRhjCUO.c0sPZ84LfaTnOZRqd3pG0kTabo5uI2","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:24:39.190Z","sign_up_date_tzo":240,"roles":{},"_id":"5b51b8674cd4867e2bae0863"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082279107-976: Sending a verification email to svega17@upcode.co \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082279107-976: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhMTdAdXBjb2RlLmNvIiwiZXh0cmEiOiJzb21lIGV4dHJhIGNsYWltcyIsImlhdCI6MTUzMjA4MjI3OX0.ectKqXS4JdbYQSDy4jXMBwVa0yUCmCVYHpnx_Xp-uOeKKpOV8CriMkheWleOcxu54O0U722HNT369F3Kf_y62yrMCAQebzphyz-tpZaWgBpBO3Tg8cql4sBhCh51FPX0A56h7P_JtDlCO_SjN1LHUyhZTtCKYb6ElxoFnwAs4iuLgNiI_ceEWaFMSYvaLeV3cozdnD6nfpS7dZFXxVr_XEq8gxuFnjy4vGgPVd19YhAOjC4tKauL34S2pjcrGV7hgaCjKLIjUb5D_n-pYNFZ6CQNzeMJP7VdK2YyN4FiZSrBim0wZJZLzPfuO3hP-bKMxvhUqA4urOQxDaVLpV6huA"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082352194-826: /signup received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082352194-826: IdentityProvider service will create new user: {"email":"svega@upcode.co","password":"$2b$10$wbazUnAG2Xk3Kgz71drBiOaZgybQrJ4eyd9gGLV6K44t2hZ17IQpO","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:25:52.272Z","sign_up_date_tzo":240,"roles":{}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082352194-826: IdentityProvider created new user: {"email":"svega@upcode.co","password":"$2b$10$wbazUnAG2Xk3Kgz71drBiOaZgybQrJ4eyd9gGLV6K44t2hZ17IQpO","first_name":"sebastian","last_name":"vega","verified":false,"active":false,"sign_up_date":"2018-07-20T10:25:52.272Z","sign_up_date_tzo":240,"roles":{},"_id":"5b51b8b04cd4867e2bae0864"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082352194-826: Sending a verification email to svega@upcode.co \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '001-32299-1532082352194-826: Success: {"authenticated":false,"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN2ZWdhQHVwY29kZS5jbyIsImV4dHJhIjoic29tZSBleHRyYSBjbGFpbXMiLCJpYXQiOjE1MzIwODIzNTJ9.V4CpteHHFrWb5gth7mL1KH3C8uwPwjecDrahQKlTT1q7_QT1tKoYwo-Iu44Cb3pRpldl2dCuXsX1xmjU11gSJ_v_X_-HPALyWSyPJPops_5nEG9jiOVNN8LfTIG4z0M8dGA7xVoTaENvAhXnYS9XecnGgaeKSNwQxxRuj4tR_HXVeAv1zan7Jv-EJOiSNQIqZ-XL63d_WwKT5jidrVzwmWlp6Jadu2b8kvteDEYT_uo-rTkz8MEfUQ5CBVMbUdxzkE2S8RUYi0RdIpfqA1XwuOaO-bGNzYmjpIxSz40AbIBayx9kwU9_ORmoFx48n2vzwuxEvVmpkgGltc1S2RR62w"} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '002-32299-1532082430899-489: /verify?id=5b51b8b04cd4867e2bae0864 received new request from ::1 \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '002-32299-1532082430899-489: User with id 5b51b8b04cd4867e2bae0864 requested to be verified. \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '002-32299-1532082430899-489: User with id 5b51b8b04cd4867e2bae0864 successfully verified. \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '002-32299-1532082430899-489: Success: {"modifiedUser":{"_id":"5b51b8b04cd4867e2bae0864","email":"svega@upcode.co","password":"$2b$10$wbazUnAG2Xk3Kgz71drBiOaZgybQrJ4eyd9gGLV6K44t2hZ17IQpO","first_name":"sebastian","last_name":"vega","verified":true,"active":true,"sign_up_date":"2018-07-20T10:25:52.272Z","sign_up_date_tzo":240,"roles":{}}} \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }
+{ message: '32299: Uncaught exception: Error: read ECONNRESET \n',
+  level: 'info',
+  [Symbol(level)]: 'info' }

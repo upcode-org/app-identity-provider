@@ -30,3 +30,14 @@ export class VerifyUserResponse {
     modifiedUser: any
 }
 
+export interface VerificationEmailMsg {
+    msgTypeId: number, //1
+    recipientEmail: string,
+    payload: {
+        "APP_IDENTITY_PROVIDER_HOST": string,
+        "FIRST_NAME": string,
+        "LAST_NAME": string,
+        "USER_ID": string
+    }
+}
+

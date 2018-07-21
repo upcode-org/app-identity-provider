@@ -3,7 +3,7 @@ import { rabbitChannel } from "../connections/rabbitMQ";
 
 export class VerificationEmailProducer {
     
-    queueName = 'app-signup-verification-emails'; //dev vs prod ENV
+    queueName = 'emails-to-send'; //dev vs prod ENV
     ch: Channel;
     connection: Connection;
 

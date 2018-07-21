@@ -10,10 +10,12 @@ import {
     SignupUserRequest,
     SignupUserResponse,
     VerifyUserResponse,
+    VerificationEmailMsg,
 } from '../../services/identity-provider/identity-provider-contracts';
 import { VerificationEmailProducer } from '../verification-email-producer';
 import { MonitoringService } from '../monitoring-service';
 import { FindAndModifyWriteOpResultObject } from 'mongodb';
+import { getHost } from '../../environments/host';
 
 const cert = readFileSync('.config/private_key_06-10-18.key');
 
@@ -96,12 +98,17 @@ export class IdentityProvider implements IIdentityProvider {
 
     private sendToEmailQueue(createdUser): void {
         
-        const msg = { 
-            "userId": createdUser._id, 
-            "email": createdUser.email, 
-            "firstName": createdUser.first_name,
-            "lastName": createdUser.last_name
+        const msg: VerificationEmailMsg = { 
+            msgTypeId: 1,
+            recipientEmail: createdUser.email,
+            payload: {
+                "APP_IDENTITY_PROVIDER_HOST": getHost(process.env.NODE_ENV), 
+                "FIRST_NAME": createdUser.first_name,
+                "LAST_NAME": createdUser.last_name,
+                "USER_ID": createdUser._id, 
+            }
         }
+
         this.monitoringService.log(`Sending a verification email to ${createdUser.email}`)
         this.verificationEmailProducer.produceMsg(msg);
     }
