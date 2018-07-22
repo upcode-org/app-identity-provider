@@ -1,19 +1,17 @@
 import { Logger } from "winston";
-import { Connection, Channel } from "amqplib";
+import { Channel } from "amqplib";
 
 export class MonitoringService { 
     
     logger: Logger;
     processInstanceId: string;
-    connection: Connection;
     ch: Channel;
     queueName: string;
 
-    constructor(logger: Logger, processInstanceId, rmqConnection, rmqChannel, queueName) {
-        this.processInstanceId = processInstanceId;
+    constructor(logger: Logger, processInstanceId: string, monServCh: Channel, queueName: string) {
         this.logger = logger;
-        this.connection = rmqConnection;
-        this.ch = rmqChannel;
+        this.processInstanceId = processInstanceId;
+        this.ch = monServCh;
         this.queueName = queueName;
     }
 
@@ -25,14 +23,13 @@ export class MonitoringService {
     }
 
     async report(msg): Promise<boolean> {
-
         const msgBuffer = new Buffer(JSON.stringify(msg));
 
         try {
             return this.ch.sendToQueue(this.queueName, msgBuffer);
         } catch(err) {
-            //report err
-            this.log(err && err.message ? err.message : 'Error sending to Rabbit Queue');
+            console.log(err) //avoid infinite loop!
+            //throw custom err
         }
     }
 }

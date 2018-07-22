@@ -89,8 +89,8 @@ export class IdentityProvider implements IIdentityProvider {
         const  response = new VerifyUserResponse();
         const result: FindAndModifyWriteOpResultObject = await this.userRepository.updateUserVerification(userId);
         
-        if(result.ok === 1) response.modifiedUser = result.value;
-        if(result.ok !== 1) throw new Error('Could not update user');
+        if(result.ok !== 1 || result.value === null ) throw new Error('Could not update user');
+        if(result.ok === 1 ) response.modifiedUser = result.value;
         
         this.monitoringService.log(`User with id ${userId} successfully verified.`)
         return response;
@@ -101,6 +101,7 @@ export class IdentityProvider implements IIdentityProvider {
         const msg: VerificationEmailMsg = { 
             msgTypeId: 1,
             recipientEmail: createdUser.email,
+            processInstanceId: this.monitoringService.processInstanceId,
             payload: {
                 "APP_IDENTITY_PROVIDER_HOST": getHost(process.env.NODE_ENV), 
                 "FIRST_NAME": createdUser.first_name,

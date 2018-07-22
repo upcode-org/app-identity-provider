@@ -33,6 +33,7 @@ export class VerifyUserResponse {
 export interface VerificationEmailMsg {
     msgTypeId: number, //1
     recipientEmail: string,
+    processInstanceId: string,
     payload: {
         "APP_IDENTITY_PROVIDER_HOST": string,
         "FIRST_NAME": string,

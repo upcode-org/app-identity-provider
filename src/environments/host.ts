@@ -7,6 +7,6 @@ export const getHost = (env:string):string => {
         case 'PROD':
             return 'http://aip.upcode-api.co';
         default:
-            return null;
+            return 'test-host';
     }
 }

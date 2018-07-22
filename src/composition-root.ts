@@ -39,21 +39,23 @@ export const containerResolver = async (): Promise<AppContainer> => {
     try {
         const identityProviderDb = await mongoConnection();
         const rmqConnection = await rabbitConnection();
-        const rmqChannel = await rabbitChannel(rmqConnection);
+        const verifEmailProdCh = await rabbitChannel(rmqConnection);
+        const monServCh = await rabbitChannel(rmqConnection);
         
-        container.singleton('rmqConnection', rmqConnection);
-        container.singleton('rmqChannel', rmqChannel);
-        container.singleton('verificationEmailProducer', VerificationEmailProducer, ['rmqConnection'] );
+        container.singleton('verifEmailProdCh', verifEmailProdCh);
+        container.singleton('monServCh', monServCh);
+        
+        container.singleton('verificationEmailProducer', VerificationEmailProducer, ['verifEmailProdCh'] );
         container.singleton('identityProviderDb', identityProviderDb );
-        container.singleton('userRepository', UserRepository, ['identityProviderDb'] );
         container.singleton('logger', logger);
+        container.singleton('userRepository', UserRepository, ['identityProviderDb'] );
         
         // Will be registered on each req. These will only be available in the container where they were registered
         container.scopedDependency('processInstanceId', process.pid );
         container.scopedDependency('queueName', 'app-identity-provider-logs' );
         
         // Will be instantiated in each req. One or more of the dependencies will be a scoped dependency.
-        container.scopedSingleton('monitoringService', MonitoringService, ['logger', 'processInstanceId', 'rmqConnection', 'rmqChannel', 'queueName']);
+        container.scopedSingleton('monitoringService', MonitoringService, ['logger', 'processInstanceId', 'monServCh', 'queueName']);
         container.scopedSingleton('identityProvider', IdentityProvider, ['userRepository', 'verificationEmailProducer', 'monitoringService'] );
 
         return container;

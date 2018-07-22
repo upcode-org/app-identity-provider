@@ -43,11 +43,11 @@ if (false) { //cluster.isMaster
             app.use(errorHandler);
 
             const server = app.listen( process.env.PORT || port, () => {
-                console.log(`"Identity Provider" is serving requests on port: ${port}`);
+                monitoringService.log(`"Identity Provider" is serving requests on port: ${port}`);
             });
 
             server.on('close', () => {
-                console.log('server closed!');
+                //to do
             });
 
             process.on('uncaughtException', (err) => {

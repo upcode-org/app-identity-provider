@@ -12,7 +12,6 @@ export const mongoConnection = ():Promise<Db> => {
     return MongoClient.connect(connectionString)
         .then((client: MongoClient) => {
             const identityProviderDb = client.db(dbName);
-            console.log('connected to database: ', identityProviderDb.databaseName);
             return identityProviderDb
         })
         .catch( err => {
